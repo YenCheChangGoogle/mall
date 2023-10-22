@@ -8,7 +8,7 @@ import org.springframework.data.elasticsearch.annotations.FieldType;
 import java.io.Serializable;
 
 /**
- * 搜索商品的属性信息
+ * 搜索商品的屬性信息
  * Created by macro on 2018/6/27.
  */
 @Data
@@ -17,12 +17,12 @@ public class EsProductAttributeValue implements Serializable {
     private static final long serialVersionUID = 1L;
     private Long id;
     private Long productAttributeId;
-    //属性值
+    //屬性值
     @Field(type = FieldType.Keyword)
     private String value;
-    //属性参数：0->规格；1->参数
+    //屬性參數：0->規格；1->參數
     private Integer type;
-    //属性名称
+    //屬性名稱
     @Field(type=FieldType.Keyword)
     private String name;
 }

@@ -12,42 +12,42 @@ import java.util.List;
  */
 public interface EsProductService {
     /**
-     * 从数据库中导入所有商品到ES
+     * 從數據庫中導入所有商品到ES
      */
     int importAll();
 
     /**
-     * 根据id删除商品
+     * 根據id刪除商品
      */
     void delete(Long id);
 
     /**
-     * 根据id创建商品
+     * 根據id創建商品
      */
     EsProduct create(Long id);
 
     /**
-     * 批量删除商品
+     * 批量刪除商品
      */
     void delete(List<Long> ids);
 
     /**
-     * 根据关键字搜索名称或者副标题
+     * 根據關鍵字搜索名稱或者副標題
      */
     Page<EsProduct> search(String keyword, Integer pageNum, Integer pageSize);
 
     /**
-     * 根据关键字搜索名称或者副标题复合查询
+     * 根據關鍵字搜索名稱或者副標題復合查詢
      */
     Page<EsProduct> search(String keyword, Long brandId, Long productCategoryId, Integer pageNum, Integer pageSize,Integer sort);
 
     /**
-     * 根据商品id推荐相关商品
+     * 根據商品id推薦相關商品
      */
     Page<EsProduct> recommend(Long id, Integer pageNum, Integer pageSize);
 
     /**
-     * 获取搜索词相关品牌、分类、属性
+     * 獲取搜索詞相關品牌、分類、屬性
      */
     EsProductRelatedInfo searchRelatedInfo(String keyword);
 }

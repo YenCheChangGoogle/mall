@@ -12,12 +12,12 @@ import java.util.List;
  */
 public interface PmsBrandService {
     /**
-     * 获取所有品牌
+     * 獲取所有品牌
      */
     List<PmsBrand> listAllBrand();
 
     /**
-     * 创建品牌
+     * 創建品牌
      */
     int createBrand(PmsBrandParam pmsBrandParam);
 
@@ -28,32 +28,32 @@ public interface PmsBrandService {
     int updateBrand(Long id, PmsBrandParam pmsBrandParam);
 
     /**
-     * 删除品牌
+     * 刪除品牌
      */
     int deleteBrand(Long id);
 
     /**
-     * 批量删除品牌
+     * 批量刪除品牌
      */
     int deleteBrand(List<Long> ids);
 
     /**
-     * 分页查询品牌
+     * 分頁查詢品牌
      */
     List<PmsBrand> listBrand(String keyword, int pageNum, int pageSize);
 
     /**
-     * 获取品牌详情
+     * 獲取品牌詳情
      */
     PmsBrand getBrand(Long id);
 
     /**
-     * 修改显示状态
+     * 修改顯示狀態
      */
     int updateShowStatus(List<Long> ids, Integer showStatus);
 
     /**
-     * 修改厂家制造商状态
+     * 修改廠家製造商狀態
      */
     int updateFactoryStatus(List<Long> ids, Integer factoryStatus);
 }

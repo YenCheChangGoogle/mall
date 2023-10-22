@@ -14,44 +14,44 @@ public class OmsCartItem implements Serializable {
 
     private Long memberId;
 
-    @ApiModelProperty(value = "购买数量")
+    @ApiModelProperty(value = "購買數量")
     private Integer quantity;
 
-    @ApiModelProperty(value = "添加到购物车的价格")
+    @ApiModelProperty(value = "添加到購物車的價格")
     private BigDecimal price;
 
-    @ApiModelProperty(value = "商品主图")
+    @ApiModelProperty(value = "商品主圖")
     private String productPic;
 
-    @ApiModelProperty(value = "商品名称")
+    @ApiModelProperty(value = "商品名稱")
     private String productName;
 
-    @ApiModelProperty(value = "商品副标题（卖点）")
+    @ApiModelProperty(value = "商品副標題（賣點）")
     private String productSubTitle;
 
-    @ApiModelProperty(value = "商品sku条码")
+    @ApiModelProperty(value = "商品sku條碼")
     private String productSkuCode;
 
-    @ApiModelProperty(value = "会员昵称")
+    @ApiModelProperty(value = "會員暱稱")
     private String memberNickname;
 
-    @ApiModelProperty(value = "创建时间")
+    @ApiModelProperty(value = "創建時間")
     private Date createDate;
 
-    @ApiModelProperty(value = "修改时间")
+    @ApiModelProperty(value = "修改時間")
     private Date modifyDate;
 
-    @ApiModelProperty(value = "是否删除")
+    @ApiModelProperty(value = "是否刪除")
     private Integer deleteStatus;
 
-    @ApiModelProperty(value = "商品分类")
+    @ApiModelProperty(value = "商品分類")
     private Long productCategoryId;
 
     private String productBrand;
 
     private String productSn;
 
-    @ApiModelProperty(value = "商品销售属性:[{'key':'颜色','value':'颜色'},{'key':'容量','value':'4G'}]")
+    @ApiModelProperty(value = "商品銷售屬性:[{'key':'顏色','value':'顏色'},{'key':'容量','value':'4G'}]")
     private String productAttr;
 
     private static final long serialVersionUID = 1L;

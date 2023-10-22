@@ -5,22 +5,22 @@ import lombok.Getter;
 import lombok.Setter;
 
 /**
- * 订单查询参数
+ * 訂單查詢參數
  * Created by macro on 2018/10/11.
  */
 @Getter
 @Setter
 public class OmsOrderQueryParam {
-    @ApiModelProperty(value = "订单编号")
+    @ApiModelProperty(value = "訂單編號")
     private String orderSn;
-    @ApiModelProperty(value = "收货人姓名/号码")
+    @ApiModelProperty(value = "收貨人姓名/號碼")
     private String receiverKeyword;
-    @ApiModelProperty(value = "订单状态：0->待付款；1->待发货；2->已发货；3->已完成；4->已关闭；5->无效订单")
+    @ApiModelProperty(value = "訂單狀態：0->待付款；1->待發貨；2->已發貨；3->已完成；4->已關閉；5->無效訂單")
     private Integer status;
-    @ApiModelProperty(value = "订单类型：0->正常订单；1->秒杀订单")
+    @ApiModelProperty(value = "訂單類型：0->正常訂單；1->秒殺訂單")
     private Integer orderType;
-    @ApiModelProperty(value = "订单来源：0->PC订单；1->app订单")
+    @ApiModelProperty(value = "訂單來源：0->PC訂單；1->app訂單")
     private Integer sourceType;
-    @ApiModelProperty(value = "订单提交时间")
+    @ApiModelProperty(value = "訂單提交時間")
     private String createTime;
 }

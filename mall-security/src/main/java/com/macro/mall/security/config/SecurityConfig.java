@@ -19,7 +19,7 @@ import org.springframework.security.web.authentication.UsernamePasswordAuthentic
 
 
 /**
- * 对SpringSecurity配置类的扩展，支持自定义白名单资源路径和查询用户逻辑
+ * 對SpringSecurity配置類的擴展，支持自定義白名單資源路徑和查詢用戶邏輯
  * Created by macro on 2019/11/5.
  */
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
@@ -31,33 +31,33 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     protected void configure(HttpSecurity httpSecurity) throws Exception {
         ExpressionUrlAuthorizationConfigurer<HttpSecurity>.ExpressionInterceptUrlRegistry registry = httpSecurity
                 .authorizeRequests();
-        // 不需要保护的资源路径允许访问
+        // 不需要保護的資源路徑允許訪問
         for (String url : ignoreUrlsConfig().getUrls()) {
             registry.antMatchers(url).permitAll();
         }
-        // 允许跨域的OPTIONS请求
+        // 允許跨域的OPTIONS請求
         registry.antMatchers(HttpMethod.OPTIONS)
                 .permitAll();
-        // 其他任何请求都需要身份认证
+        // 其他任何請求都需要身份認證
         registry.and()
                 .authorizeRequests()
                 .anyRequest()
                 .authenticated()
-                // 关闭跨站请求防护及不使用session
+                // 關閉跨站請求防護及不使用session
                 .and()
                 .csrf()
                 .disable()
                 .sessionManagement()
                 .sessionCreationPolicy(SessionCreationPolicy.STATELESS)
-                // 自定义权限拒绝处理类
+                // 自定義權限拒絕處理類
                 .and()
                 .exceptionHandling()
                 .accessDeniedHandler(restfulAccessDeniedHandler())
                 .authenticationEntryPoint(restAuthenticationEntryPoint())
-                // 自定义权限拦截器JWT过滤器
+                // 自定義權限攔截器JWT過濾器
                 .and()
                 .addFilterBefore(jwtAuthenticationTokenFilter(), UsernamePasswordAuthenticationFilter.class);
-        //有动态权限配置时添加动态权限校验过滤器
+        //有動態權限配置時添加動態權限校驗過濾器
         if(dynamicSecurityService!=null){
             registry.and().addFilterBefore(dynamicSecurityFilter(), FilterSecurityInterceptor.class);
         }

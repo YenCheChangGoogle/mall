@@ -9,7 +9,7 @@ import java.util.Arrays;
 import java.util.Collection;
 
 /**
- * 会员详情封装
+ * 會員詳情封裝
  * Created by macro on 2018/8/3.
  */
 public class MemberDetails implements UserDetails {
@@ -21,7 +21,7 @@ public class MemberDetails implements UserDetails {
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
-        //返回当前用户的权限
+        //返回當前用戶的權限
         return Arrays.asList(new SimpleGrantedAuthority("TEST"));
     }
 

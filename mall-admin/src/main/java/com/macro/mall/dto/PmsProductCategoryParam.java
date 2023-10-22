@@ -10,34 +10,34 @@ import javax.validation.constraints.NotEmpty;
 import java.util.List;
 
 /**
- * 添加更新产品分类的参数
+ * 添加更新產品分類的參數
  * Created by macro on 2018/4/26.
  */
 @Data
 @EqualsAndHashCode(callSuper = false)
 public class PmsProductCategoryParam {
-    @ApiModelProperty("父分类的编号")
+    @ApiModelProperty("父分類的編號")
     private Long parentId;
     @NotEmpty
-    @ApiModelProperty(value = "商品分类名称",required = true)
+    @ApiModelProperty(value = "商品分類名稱",required = true)
     private String name;
-    @ApiModelProperty("分类单位")
+    @ApiModelProperty("分類單位")
     private String productUnit;
-    @FlagValidator(value = {"0","1"},message = "状态只能为0或1")
-    @ApiModelProperty("是否在导航栏显示")
+    @FlagValidator(value = {"0","1"},message = "狀態只能為0或1")
+    @ApiModelProperty("是否在導航欄顯示")
     private Integer navStatus;
-    @FlagValidator(value = {"0","1"},message = "状态只能为0或1")
-    @ApiModelProperty("是否进行显示")
+    @FlagValidator(value = {"0","1"},message = "狀態只能為0或1")
+    @ApiModelProperty("是否進行顯示")
     private Integer showStatus;
     @Min(value = 0)
     @ApiModelProperty("排序")
     private Integer sort;
-    @ApiModelProperty("图标")
+    @ApiModelProperty("圖標")
     private String icon;
-    @ApiModelProperty("关键字")
+    @ApiModelProperty("關鍵字")
     private String keywords;
     @ApiModelProperty("描述")
     private String description;
-    @ApiModelProperty("产品相关筛选属性集合")
+    @ApiModelProperty("產品相關篩選屬性集合")
     private List<Long> productAttributeIdList;
 }

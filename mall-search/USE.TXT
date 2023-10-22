@@ -1,0 +1,7 @@
+直接運行com.macro.mall.search.MallSearchApplication的main方法即可
+http://localhost:8081/swagger-ui/
+
+使用前需要先呼叫介面匯入資料；http://localhost:8081/esProduct/importAll
+如出現無法啟動的問題，可以先刪除Elasticsearch裡面的資料再啟動
+
+#

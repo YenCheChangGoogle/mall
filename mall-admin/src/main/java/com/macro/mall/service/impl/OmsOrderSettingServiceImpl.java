@@ -7,7 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 /**
- * 订单设置管理Service实现类
+ * 訂單設置管理Service實現類
  * Created by macro on 2018/10/16.
  */
 @Service

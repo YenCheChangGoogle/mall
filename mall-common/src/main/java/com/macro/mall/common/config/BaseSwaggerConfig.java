@@ -14,7 +14,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Swagger基础配置
+ * Swagger基礎配置
  * Created by macro on 2020/7/16.
  */
 public abstract class BaseSwaggerConfig {
@@ -44,7 +44,7 @@ public abstract class BaseSwaggerConfig {
     }
 
     private List<ApiKey> securitySchemes() {
-        //设置请求头信息
+        //設置請求頭信息
         List<ApiKey> result = new ArrayList<>();
         ApiKey apiKey = new ApiKey("Authorization", "Authorization", "header");
         result.add(apiKey);
@@ -52,7 +52,7 @@ public abstract class BaseSwaggerConfig {
     }
 
     private List<SecurityContext> securityContexts() {
-        //设置需要登录认证的路径
+        //設置需要登錄認證的路徑
         List<SecurityContext> result = new ArrayList<>();
         result.add(getContextByPath("/*/.*"));
         return result;
@@ -75,7 +75,7 @@ public abstract class BaseSwaggerConfig {
     }
 
     /**
-     * 自定义Swagger配置
+     * 自定義Swagger配置
      */
     public abstract SwaggerProperties swaggerProperties();
 }

@@ -11,172 +11,172 @@ import java.util.Set;
 public interface RedisService {
 
     /**
-     * 保存属性
+     * 保存屬性
      */
     void set(String key, Object value, long time);
 
     /**
-     * 保存属性
+     * 保存屬性
      */
     void set(String key, Object value);
 
     /**
-     * 获取属性
+     * 獲取屬性
      */
     Object get(String key);
 
     /**
-     * 删除属性
+     * 刪除屬性
      */
     Boolean del(String key);
 
     /**
-     * 批量删除属性
+     * 批量刪除屬性
      */
     Long del(List<String> keys);
 
     /**
-     * 设置过期时间
+     * 設置過期時間
      */
     Boolean expire(String key, long time);
 
     /**
-     * 获取过期时间
+     * 獲取過期時間
      */
     Long getExpire(String key);
 
     /**
-     * 判断是否有该属性
+     * 判斷是否有該屬性
      */
     Boolean hasKey(String key);
 
     /**
-     * 按delta递增
+     * 按delta遞增
      */
     Long incr(String key, long delta);
 
     /**
-     * 按delta递减
+     * 按delta遞減
      */
     Long decr(String key, long delta);
 
     /**
-     * 获取Hash结构中的属性
+     * 獲取Hash結構中的屬性
      */
     Object hGet(String key, String hashKey);
 
     /**
-     * 向Hash结构中放入一个属性
+     * 向Hash結構中放入一個屬性
      */
     Boolean hSet(String key, String hashKey, Object value, long time);
 
     /**
-     * 向Hash结构中放入一个属性
+     * 向Hash結構中放入一個屬性
      */
     void hSet(String key, String hashKey, Object value);
 
     /**
-     * 直接获取整个Hash结构
+     * 直接獲取整個Hash結構
      */
     Map<Object, Object> hGetAll(String key);
 
     /**
-     * 直接设置整个Hash结构
+     * 直接設置整個Hash結構
      */
     Boolean hSetAll(String key, Map<String, Object> map, long time);
 
     /**
-     * 直接设置整个Hash结构
+     * 直接設置整個Hash結構
      */
     void hSetAll(String key, Map<String, ?> map);
 
     /**
-     * 删除Hash结构中的属性
+     * 刪除Hash結構中的屬性
      */
     void hDel(String key, Object... hashKey);
 
     /**
-     * 判断Hash结构中是否有该属性
+     * 判斷Hash結構中是否有該屬性
      */
     Boolean hHasKey(String key, String hashKey);
 
     /**
-     * Hash结构中属性递增
+     * Hash結構中屬性遞增
      */
     Long hIncr(String key, String hashKey, Long delta);
 
     /**
-     * Hash结构中属性递减
+     * Hash結構中屬性遞減
      */
     Long hDecr(String key, String hashKey, Long delta);
 
     /**
-     * 获取Set结构
+     * 獲取Set結構
      */
     Set<Object> sMembers(String key);
 
     /**
-     * 向Set结构中添加属性
+     * 向Set結構中添加屬性
      */
     Long sAdd(String key, Object... values);
 
     /**
-     * 向Set结构中添加属性
+     * 向Set結構中添加屬性
      */
     Long sAdd(String key, long time, Object... values);
 
     /**
-     * 是否为Set中的属性
+     * 是否為Set中的屬性
      */
     Boolean sIsMember(String key, Object value);
 
     /**
-     * 获取Set结构的长度
+     * 獲取Set結構的長度
      */
     Long sSize(String key);
 
     /**
-     * 删除Set结构中的属性
+     * 刪除Set結構中的屬性
      */
     Long sRemove(String key, Object... values);
 
     /**
-     * 获取List结构中的属性
+     * 獲取List結構中的屬性
      */
     List<Object> lRange(String key, long start, long end);
 
     /**
-     * 获取List结构的长度
+     * 獲取List結構的長度
      */
     Long lSize(String key);
 
     /**
-     * 根据索引获取List中的属性
+     * 根據索引獲取List中的屬性
      */
     Object lIndex(String key, long index);
 
     /**
-     * 向List结构中添加属性
+     * 向List結構中添加屬性
      */
     Long lPush(String key, Object value);
 
     /**
-     * 向List结构中添加属性
+     * 向List結構中添加屬性
      */
     Long lPush(String key, Object value, long time);
 
     /**
-     * 向List结构中批量添加属性
+     * 向List結構中批量添加屬性
      */
     Long lPushAll(String key, Object... values);
 
     /**
-     * 向List结构中批量添加属性
+     * 向List結構中批量添加屬性
      */
     Long lPushAll(String key, Long time, Object... values);
 
     /**
-     * 从List结构中移除属性
+     * 從List結構中移除屬性
      */
     Long lRemove(String key, long count, Object value);
 }

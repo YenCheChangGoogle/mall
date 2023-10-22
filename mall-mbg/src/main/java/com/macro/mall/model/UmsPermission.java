@@ -7,28 +7,28 @@ import java.util.Date;
 public class UmsPermission implements Serializable {
     private Long id;
 
-    @ApiModelProperty(value = "父级权限id")
+    @ApiModelProperty(value = "父級權限id")
     private Long pid;
 
-    @ApiModelProperty(value = "名称")
+    @ApiModelProperty(value = "名稱")
     private String name;
 
-    @ApiModelProperty(value = "权限值")
+    @ApiModelProperty(value = "權限值")
     private String value;
 
-    @ApiModelProperty(value = "图标")
+    @ApiModelProperty(value = "圖標")
     private String icon;
 
-    @ApiModelProperty(value = "权限类型：0->目录；1->菜单；2->按钮（接口绑定权限）")
+    @ApiModelProperty(value = "權限類型：0->目錄；1->菜單；2->按鈕（接口綁定權限）")
     private Integer type;
 
-    @ApiModelProperty(value = "前端资源路径")
+    @ApiModelProperty(value = "前端資源路徑")
     private String uri;
 
-    @ApiModelProperty(value = "启用状态；0->禁用；1->启用")
+    @ApiModelProperty(value = "啟用狀態；0->禁用；1->啟用")
     private Integer status;
 
-    @ApiModelProperty(value = "创建时间")
+    @ApiModelProperty(value = "創建時間")
     private Date createTime;
 
     @ApiModelProperty(value = "排序")

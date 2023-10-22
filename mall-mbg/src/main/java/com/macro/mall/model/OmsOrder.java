@@ -6,134 +6,134 @@ import java.math.BigDecimal;
 import java.util.Date;
 
 public class OmsOrder implements Serializable {
-    @ApiModelProperty(value = "订单id")
+    @ApiModelProperty(value = "訂單id")
     private Long id;
 
     private Long memberId;
 
     private Long couponId;
 
-    @ApiModelProperty(value = "订单编号")
+    @ApiModelProperty(value = "訂單編號")
     private String orderSn;
 
-    @ApiModelProperty(value = "提交时间")
+    @ApiModelProperty(value = "提交時間")
     private Date createTime;
 
-    @ApiModelProperty(value = "用户帐号")
+    @ApiModelProperty(value = "用戶帳號")
     private String memberUsername;
 
-    @ApiModelProperty(value = "订单总金额")
+    @ApiModelProperty(value = "訂單總金額")
     private BigDecimal totalAmount;
 
-    @ApiModelProperty(value = "应付金额（实际支付金额）")
+    @ApiModelProperty(value = "應付金額（實際支付金額）")
     private BigDecimal payAmount;
 
-    @ApiModelProperty(value = "运费金额")
+    @ApiModelProperty(value = "運費金額")
     private BigDecimal freightAmount;
 
-    @ApiModelProperty(value = "促销优化金额（促销价、满减、阶梯价）")
+    @ApiModelProperty(value = "促銷優化金額（促銷價、滿減、階梯價）")
     private BigDecimal promotionAmount;
 
-    @ApiModelProperty(value = "积分抵扣金额")
+    @ApiModelProperty(value = "積分抵扣金額")
     private BigDecimal integrationAmount;
 
-    @ApiModelProperty(value = "优惠券抵扣金额")
+    @ApiModelProperty(value = "優惠券抵扣金額")
     private BigDecimal couponAmount;
 
-    @ApiModelProperty(value = "管理员后台调整订单使用的折扣金额")
+    @ApiModelProperty(value = "管理員後臺調整訂單使用的折扣金額")
     private BigDecimal discountAmount;
 
-    @ApiModelProperty(value = "支付方式：0->未支付；1->支付宝；2->微信")
+    @ApiModelProperty(value = "支付方式：0->未支付；1->支付寶；2->微信")
     private Integer payType;
 
-    @ApiModelProperty(value = "订单来源：0->PC订单；1->app订单")
+    @ApiModelProperty(value = "訂單來源：0->PC訂單；1->app訂單")
     private Integer sourceType;
 
-    @ApiModelProperty(value = "订单状态：0->待付款；1->待发货；2->已发货；3->已完成；4->已关闭；5->无效订单")
+    @ApiModelProperty(value = "訂單狀態：0->待付款；1->待發貨；2->已發貨；3->已完成；4->已關閉；5->無效訂單")
     private Integer status;
 
-    @ApiModelProperty(value = "订单类型：0->正常订单；1->秒杀订单")
+    @ApiModelProperty(value = "訂單類型：0->正常訂單；1->秒殺訂單")
     private Integer orderType;
 
     @ApiModelProperty(value = "物流公司(配送方式)")
     private String deliveryCompany;
 
-    @ApiModelProperty(value = "物流单号")
+    @ApiModelProperty(value = "物流單號")
     private String deliverySn;
 
-    @ApiModelProperty(value = "自动确认时间（天）")
+    @ApiModelProperty(value = "自動確認時間（天）")
     private Integer autoConfirmDay;
 
-    @ApiModelProperty(value = "可以获得的积分")
+    @ApiModelProperty(value = "可以獲得的積分")
     private Integer integration;
 
-    @ApiModelProperty(value = "可以活动的成长值")
+    @ApiModelProperty(value = "可以活動的成長值")
     private Integer growth;
 
-    @ApiModelProperty(value = "活动信息")
+    @ApiModelProperty(value = "活動信息")
     private String promotionInfo;
 
-    @ApiModelProperty(value = "发票类型：0->不开发票；1->电子发票；2->纸质发票")
+    @ApiModelProperty(value = "發票類型：0->不開發票；1->電子發票；2->紙質發票")
     private Integer billType;
 
-    @ApiModelProperty(value = "发票抬头")
+    @ApiModelProperty(value = "發票抬頭")
     private String billHeader;
 
-    @ApiModelProperty(value = "发票内容")
+    @ApiModelProperty(value = "發票內容")
     private String billContent;
 
-    @ApiModelProperty(value = "收票人电话")
+    @ApiModelProperty(value = "收票人電話")
     private String billReceiverPhone;
 
-    @ApiModelProperty(value = "收票人邮箱")
+    @ApiModelProperty(value = "收票人郵箱")
     private String billReceiverEmail;
 
-    @ApiModelProperty(value = "收货人姓名")
+    @ApiModelProperty(value = "收貨人姓名")
     private String receiverName;
 
-    @ApiModelProperty(value = "收货人电话")
+    @ApiModelProperty(value = "收貨人電話")
     private String receiverPhone;
 
-    @ApiModelProperty(value = "收货人邮编")
+    @ApiModelProperty(value = "收貨人郵編")
     private String receiverPostCode;
 
-    @ApiModelProperty(value = "省份/直辖市")
+    @ApiModelProperty(value = "省份/直轄市")
     private String receiverProvince;
 
     @ApiModelProperty(value = "城市")
     private String receiverCity;
 
-    @ApiModelProperty(value = "区")
+    @ApiModelProperty(value = "區")
     private String receiverRegion;
 
-    @ApiModelProperty(value = "详细地址")
+    @ApiModelProperty(value = "詳細地址")
     private String receiverDetailAddress;
 
-    @ApiModelProperty(value = "订单备注")
+    @ApiModelProperty(value = "訂單備註")
     private String note;
 
-    @ApiModelProperty(value = "确认收货状态：0->未确认；1->已确认")
+    @ApiModelProperty(value = "確認收貨狀態：0->未確認；1->已確認")
     private Integer confirmStatus;
 
-    @ApiModelProperty(value = "删除状态：0->未删除；1->已删除")
+    @ApiModelProperty(value = "刪除狀態：0->未刪除；1->已刪除")
     private Integer deleteStatus;
 
-    @ApiModelProperty(value = "下单时使用的积分")
+    @ApiModelProperty(value = "下單時使用的積分")
     private Integer useIntegration;
 
-    @ApiModelProperty(value = "支付时间")
+    @ApiModelProperty(value = "支付時間")
     private Date paymentTime;
 
-    @ApiModelProperty(value = "发货时间")
+    @ApiModelProperty(value = "發貨時間")
     private Date deliveryTime;
 
-    @ApiModelProperty(value = "确认收货时间")
+    @ApiModelProperty(value = "確認收貨時間")
     private Date receiveTime;
 
-    @ApiModelProperty(value = "评价时间")
+    @ApiModelProperty(value = "評價時間")
     private Date commentTime;
 
-    @ApiModelProperty(value = "修改时间")
+    @ApiModelProperty(value = "修改時間")
     private Date modifyTime;
 
     private static final long serialVersionUID = 1L;

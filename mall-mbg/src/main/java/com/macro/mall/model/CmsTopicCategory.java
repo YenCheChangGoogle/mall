@@ -8,10 +8,10 @@ public class CmsTopicCategory implements Serializable {
 
     private String name;
 
-    @ApiModelProperty(value = "分类图标")
+    @ApiModelProperty(value = "分類圖標")
     private String icon;
 
-    @ApiModelProperty(value = "专题数量")
+    @ApiModelProperty(value = "專題數量")
     private Integer subjectCount;
 
     private Integer showStatus;

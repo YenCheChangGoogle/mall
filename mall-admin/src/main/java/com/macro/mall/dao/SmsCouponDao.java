@@ -4,12 +4,12 @@ import com.macro.mall.dto.SmsCouponParam;
 import org.apache.ibatis.annotations.Param;
 
 /**
- * 优惠券管理自定义Dao
+ * 優惠券管理自定義Dao
  * Created by macro on 2018/8/29.
  */
 public interface SmsCouponDao {
     /**
-     * 获取优惠券详情包括绑定关系
+     * 獲取優惠券詳情包括綁定關係
      */
     SmsCouponParam getItem(@Param("id") Long id);
 }

@@ -15,16 +15,16 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 /**
- * 会员关注品牌管理Controller
+ * 會員關注品牌管理Controller
  * Created by macro on 2018/8/2.
  */
 @Controller
-@Api(tags = "MemberAttentionController", description = "会员关注品牌管理")
+@Api(tags = "MemberAttentionController", description = "會員關注品牌管理")
 @RequestMapping("/member/attention")
 public class MemberAttentionController {
     @Autowired
     private MemberAttentionService memberAttentionService;
-    @ApiOperation("添加品牌关注")
+    @ApiOperation("添加品牌關注")
     @RequestMapping(value = "/add", method = RequestMethod.POST)
     @ResponseBody
     public CommonResult add(@RequestBody MemberBrandAttention memberBrandAttention) {
@@ -36,7 +36,7 @@ public class MemberAttentionController {
         }
     }
 
-    @ApiOperation("取消品牌关注")
+    @ApiOperation("取消品牌關注")
     @RequestMapping(value = "/delete", method = RequestMethod.POST)
     @ResponseBody
     public CommonResult delete(Long brandId) {
@@ -48,7 +48,7 @@ public class MemberAttentionController {
         }
     }
 
-    @ApiOperation("显示当前用户品牌关注列表")
+    @ApiOperation("顯示當前用戶品牌關注列表")
     @RequestMapping(value = "/list", method = RequestMethod.GET)
     @ResponseBody
     public CommonResult<CommonPage<MemberBrandAttention>> list(@RequestParam(value = "pageNum", defaultValue = "1") Integer pageNum,
@@ -57,7 +57,7 @@ public class MemberAttentionController {
         return CommonResult.success(CommonPage.restPage(page));
     }
 
-    @ApiOperation("显示品牌关注详情")
+    @ApiOperation("顯示品牌關注詳情")
     @RequestMapping(value = "/detail", method = RequestMethod.GET)
     @ResponseBody
     public CommonResult<MemberBrandAttention> detail(@RequestParam Long brandId) {
@@ -65,7 +65,7 @@ public class MemberAttentionController {
         return CommonResult.success(memberBrandAttention);
     }
 
-    @ApiOperation("清空当前用户品牌关注列表")
+    @ApiOperation("清空當前用戶品牌關注列表")
     @RequestMapping(value = "/clear", method = RequestMethod.POST)
     @ResponseBody
     public CommonResult clear() {

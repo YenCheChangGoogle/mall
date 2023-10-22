@@ -10,7 +10,7 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 
 /**
- * 收货地址管理Service实现类
+ * 收貨地址管理Service實現類
  * Created by macro on 2018/10/18.
  */
 @Service

@@ -8,7 +8,7 @@ import org.springframework.transaction.annotation.Transactional;
 import java.util.List;
 
 /**
- * 后台角色管理Service
+ * 後台角色管理Service
  * Created by macro on 2018/9/30.
  */
 public interface UmsRoleService {
@@ -23,43 +23,43 @@ public interface UmsRoleService {
     int update(Long id, UmsRole role);
 
     /**
-     * 批量删除角色
+     * 批量刪除角色
      */
     int delete(List<Long> ids);
 
     /**
-     * 获取所有角色列表
+     * 獲取所有角色列表
      */
     List<UmsRole> list();
 
     /**
-     * 分页获取角色列表
+     * 分頁獲取角色列表
      */
     List<UmsRole> list(String keyword, Integer pageSize, Integer pageNum);
 
     /**
-     * 根据管理员ID获取对应菜单
+     * 根據管理員ID獲取對應菜單
      */
     List<UmsMenu> getMenuList(Long adminId);
 
     /**
-     * 获取角色相关菜单
+     * 獲取角色相關菜單
      */
     List<UmsMenu> listMenu(Long roleId);
 
     /**
-     * 获取角色相关资源
+     * 獲取角色相關資源
      */
     List<UmsResource> listResource(Long roleId);
 
     /**
-     * 给角色分配菜单
+     * 給角色分配菜單
      */
     @Transactional
     int allocMenu(Long roleId, List<Long> menuIds);
 
     /**
-     * 给角色分配资源
+     * 給角色分配資源
      */
     @Transactional
     int allocResource(Long roleId, List<Long> resourceIds);

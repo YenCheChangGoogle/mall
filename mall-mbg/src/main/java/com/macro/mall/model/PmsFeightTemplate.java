@@ -9,13 +9,13 @@ public class PmsFeightTemplate implements Serializable {
 
     private String name;
 
-    @ApiModelProperty(value = "计费类型:0->按重量；1->按件数")
+    @ApiModelProperty(value = "計費類型:0->按重量；1->按件數")
     private Integer chargeType;
 
     @ApiModelProperty(value = "首重kg")
     private BigDecimal firstWeight;
 
-    @ApiModelProperty(value = "首费（元）")
+    @ApiModelProperty(value = "首費（元）")
     private BigDecimal firstFee;
 
     private BigDecimal continueWeight;

@@ -6,19 +6,19 @@ import java.io.Serializable;
 public class OmsOrderSetting implements Serializable {
     private Long id;
 
-    @ApiModelProperty(value = "秒杀订单超时关闭时间(分)")
+    @ApiModelProperty(value = "秒殺訂單超時關閉時間(分)")
     private Integer flashOrderOvertime;
 
-    @ApiModelProperty(value = "正常订单超时时间(分)")
+    @ApiModelProperty(value = "正常訂單超時時間(分)")
     private Integer normalOrderOvertime;
 
-    @ApiModelProperty(value = "发货后自动确认收货时间（天）")
+    @ApiModelProperty(value = "發貨後自動確認收貨時間（天）")
     private Integer confirmOvertime;
 
-    @ApiModelProperty(value = "自动完成交易时间，不能申请售后（天）")
+    @ApiModelProperty(value = "自動完成交易時間，不能申請售後（天）")
     private Integer finishOvertime;
 
-    @ApiModelProperty(value = "订单完成后自动好评时间（天）")
+    @ApiModelProperty(value = "訂單完成後自動好評時間（天）")
     private Integer commentOvertime;
 
     private static final long serialVersionUID = 1L;

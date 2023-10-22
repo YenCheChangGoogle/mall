@@ -6,32 +6,32 @@ import org.springframework.data.domain.Page;
 import java.util.List;
 
 /**
- * 会员品牌关注管理Service
+ * 會員品牌關注管理Service
  * Created by macro on 2018/8/2.
  */
 public interface MemberAttentionService {
     /**
-     * 添加关注
+     * 添加關注
      */
     int add(MemberBrandAttention memberBrandAttention);
 
     /**
-     * 取消关注
+     * 取消關注
      */
     int delete(Long brandId);
 
     /**
-     * 获取用户关注列表
+     * 獲取用戶關注列表
      */
     Page<MemberBrandAttention> list(Integer pageNum, Integer pageSize);
 
     /**
-     * 获取用户关注详情
+     * 獲取用戶關注詳情
      */
     MemberBrandAttention detail(Long brandId);
 
     /**
-     * 清空关注列表
+     * 清空關注列表
      */
     void clear();
 }

@@ -7,20 +7,20 @@ import java.util.Date;
 import java.util.List;
 
 /**
- * 首页秒杀场次信息封装
+ * 首頁秒殺場次信息封裝
  * Created by macro on 2019/1/28.
  */
 @Getter
 @Setter
 public class HomeFlashPromotion {
-    //本场开始时间
+    //本場開始時間
     private Date startTime;
-    //本场结束时间
+    //本場結束時間
     private Date endTime;
-    //下场开始时间
+    //下場開始時間
     private Date nextStartTime;
-    //下场结束时间
+    //下場結束時間
     private Date nextEndTime;
-    //属于该秒杀活动的商品
+    //屬於該秒殺活動的商品
     private List<FlashPromotionProduct> productList;
 }

@@ -25,7 +25,7 @@ public class PmsBrandController {
     @Autowired
     private PmsBrandService brandService;
 
-    @ApiOperation(value = "获取全部品牌列表")
+    @ApiOperation(value = "獲取全部品牌列表")
     @RequestMapping(value = "/listAll", method = RequestMethod.GET)
     @ResponseBody
     public CommonResult<List<PmsBrand>> getList() {
@@ -61,7 +61,7 @@ public class PmsBrandController {
         return commonResult;
     }
 
-    @ApiOperation(value = "删除品牌")
+    @ApiOperation(value = "刪除品牌")
     @RequestMapping(value = "/delete/{id}", method = RequestMethod.GET)
     @ResponseBody
     public CommonResult delete(@PathVariable("id") Long id) {
@@ -73,7 +73,7 @@ public class PmsBrandController {
         }
     }
 
-    @ApiOperation(value = "根据品牌名称分页获取品牌列表")
+    @ApiOperation(value = "根據品牌名稱分頁獲取品牌列表")
     @RequestMapping(value = "/list", method = RequestMethod.GET)
     @ResponseBody
     public CommonResult<CommonPage<PmsBrand>> getList(@RequestParam(value = "keyword", required = false) String keyword,
@@ -83,14 +83,14 @@ public class PmsBrandController {
         return CommonResult.success(CommonPage.restPage(brandList));
     }
 
-    @ApiOperation(value = "根据编号查询品牌信息")
+    @ApiOperation(value = "根據編號查詢品牌信息")
     @RequestMapping(value = "/{id}", method = RequestMethod.GET)
     @ResponseBody
     public CommonResult<PmsBrand> getItem(@PathVariable("id") Long id) {
         return CommonResult.success(brandService.getBrand(id));
     }
 
-    @ApiOperation(value = "批量删除品牌")
+    @ApiOperation(value = "批量刪除品牌")
     @RequestMapping(value = "/delete/batch", method = RequestMethod.POST)
     @ResponseBody
     public CommonResult deleteBatch(@RequestParam("ids") List<Long> ids) {
@@ -102,7 +102,7 @@ public class PmsBrandController {
         }
     }
 
-    @ApiOperation(value = "批量更新显示状态")
+    @ApiOperation(value = "批量更新顯示狀態")
     @RequestMapping(value = "/update/showStatus", method = RequestMethod.POST)
     @ResponseBody
     public CommonResult updateShowStatus(@RequestParam("ids") List<Long> ids,
@@ -115,7 +115,7 @@ public class PmsBrandController {
         }
     }
 
-    @ApiOperation(value = "批量更新厂家制造商状态")
+    @ApiOperation(value = "批量更新廠家製造商狀態")
     @RequestMapping(value = "/update/factoryStatus", method = RequestMethod.POST)
     @ResponseBody
     public CommonResult updateFactoryStatus(@RequestParam("ids") List<Long> ids,

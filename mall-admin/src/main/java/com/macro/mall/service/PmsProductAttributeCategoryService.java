@@ -6,37 +6,37 @@ import com.macro.mall.model.PmsProductAttributeCategory;
 import java.util.List;
 
 /**
- * 商品属性分类管理Service
+ * 商品屬性分類管理Service
  * Created by macro on 2018/4/26.
  */
 public interface PmsProductAttributeCategoryService {
     /**
-     * 创建属性分类
+     * 創建屬性分類
      */
     int create(String name);
 
     /**
-     * 修改属性分类
+     * 修改屬性分類
      */
     int update(Long id, String name);
 
     /**
-     * 删除属性分类
+     * 刪除屬性分類
      */
     int delete(Long id);
 
     /**
-     * 获取属性分类详情
+     * 獲取屬性分類詳情
      */
     PmsProductAttributeCategory getItem(Long id);
 
     /**
-     * 分页查询属性分类
+     * 分頁查詢屬性分類
      */
     List<PmsProductAttributeCategory> getList(Integer pageSize, Integer pageNum);
 
     /**
-     * 获取包含属性的属性分类
+     * 獲取包含屬性的屬性分類
      */
     List<PmsProductAttributeCategoryItem> getListWithAttr();
 }

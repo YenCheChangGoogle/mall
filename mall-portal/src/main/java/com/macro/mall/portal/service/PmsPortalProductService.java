@@ -12,17 +12,17 @@ import java.util.List;
  */
 public interface PmsPortalProductService {
     /**
-     * 综合搜索商品
+     * 綜合搜索商品
      */
     List<PmsProduct> search(String keyword, Long brandId, Long productCategoryId, Integer pageNum, Integer pageSize, Integer sort);
 
     /**
-     * 以树形结构获取所有商品分类
+     * 以樹形結構獲取所有商品分類
      */
     List<PmsProductCategoryNode> categoryTreeList();
 
     /**
-     * 获取前台商品详情
+     * 獲取前台商品詳情
      */
     PmsPortalProductDetail detail(Long id);
 }

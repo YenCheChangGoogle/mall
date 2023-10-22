@@ -16,7 +16,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import javax.servlet.http.HttpServletRequest;
 
 /**
- * Oss对象存储管理Controller
+ * Oss對像存儲管理Controller
  * Created by macro on 2018/4/26.
  */
 @Controller
@@ -26,7 +26,7 @@ public class OssController {
     @Autowired
     private OssService ossService;
 
-    @ApiOperation(value = "Oss上传签名生成")
+    @ApiOperation(value = "Oss上傳簽名生成")
     @RequestMapping(value = "/policy", method = RequestMethod.GET)
     @ResponseBody
     public CommonResult<OssPolicyResult> policy() {
@@ -34,7 +34,7 @@ public class OssController {
         return CommonResult.success(result);
     }
 
-    @ApiOperation(value = "Oss上传成功回调")
+    @ApiOperation(value = "Oss上傳成功回調")
     @RequestMapping(value = "callback", method = RequestMethod.POST)
     @ResponseBody
     public CommonResult<OssCallbackResult> callback(HttpServletRequest request) {

@@ -11,10 +11,10 @@ public class CmsSubject implements Serializable {
 
     private String title;
 
-    @ApiModelProperty(value = "专题主图")
+    @ApiModelProperty(value = "專題主圖")
     private String pic;
 
-    @ApiModelProperty(value = "关联产品数量")
+    @ApiModelProperty(value = "關聯產品數量")
     private Integer productCount;
 
     private Integer recommendStatus;
@@ -27,18 +27,18 @@ public class CmsSubject implements Serializable {
 
     private Integer commentCount;
 
-    @ApiModelProperty(value = "画册图片用逗号分割")
+    @ApiModelProperty(value = "畫冊圖片用逗號分割")
     private String albumPics;
 
     private String description;
 
-    @ApiModelProperty(value = "显示状态：0->不显示；1->显示")
+    @ApiModelProperty(value = "顯示狀態：0->不顯示；1->顯示")
     private Integer showStatus;
 
-    @ApiModelProperty(value = "转发数")
+    @ApiModelProperty(value = "轉發數")
     private Integer forwardCount;
 
-    @ApiModelProperty(value = "专题分类名称")
+    @ApiModelProperty(value = "專題分類名稱")
     private String categoryName;
 
     private String content;

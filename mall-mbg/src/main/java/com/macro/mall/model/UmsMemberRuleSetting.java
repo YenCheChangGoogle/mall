@@ -7,22 +7,22 @@ import java.math.BigDecimal;
 public class UmsMemberRuleSetting implements Serializable {
     private Long id;
 
-    @ApiModelProperty(value = "连续签到天数")
+    @ApiModelProperty(value = "連續簽到天數")
     private Integer continueSignDay;
 
-    @ApiModelProperty(value = "连续签到赠送数量")
+    @ApiModelProperty(value = "連續簽到贈送數量")
     private Integer continueSignPoint;
 
-    @ApiModelProperty(value = "每消费多少元获取1个点")
+    @ApiModelProperty(value = "每消費多少元獲取1個點")
     private BigDecimal consumePerPoint;
 
-    @ApiModelProperty(value = "最低获取点数的订单金额")
+    @ApiModelProperty(value = "最低獲取點數的訂單金額")
     private BigDecimal lowOrderAmount;
 
-    @ApiModelProperty(value = "每笔订单最高获取点数")
+    @ApiModelProperty(value = "每筆訂單最高獲取點數")
     private Integer maxPointPerOrder;
 
-    @ApiModelProperty(value = "类型：0->积分规则；1->成长值规则")
+    @ApiModelProperty(value = "類型：0->積分規則；1->成長值規則")
     private Integer type;
 
     private static final long serialVersionUID = 1L;

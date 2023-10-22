@@ -20,7 +20,7 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 /**
- * Oss对象存储管理Service实现类
+ * Oss對像存儲管理Service實現類
  * Created by macro on 2018/5/17.
  */
 @Service
@@ -44,25 +44,25 @@ public class OssServiceImpl implements OssService {
 	private OSSClient ossClient;
 
 	/**
-	 * 签名生成
+	 * 簽名生成
 	 */
 	@Override
 	public OssPolicyResult policy() {
 		OssPolicyResult result = new OssPolicyResult();
-		// 存储目录
+		// 存儲目錄
 		SimpleDateFormat sdf = new SimpleDateFormat("yyyyMMdd");
 		String dir = ALIYUN_OSS_DIR_PREFIX+sdf.format(new Date());
-		// 签名有效期
+		// 簽名有效期
 		long expireEndTime = System.currentTimeMillis() + ALIYUN_OSS_EXPIRE * 1000;
 		Date expiration = new Date(expireEndTime);
 		// 文件大小
 		long maxSize = ALIYUN_OSS_MAX_SIZE * 1024 * 1024;
-		// 回调
+		// 回調
 		OssCallbackParam callback = new OssCallbackParam();
 		callback.setCallbackUrl(ALIYUN_OSS_CALLBACK);
 		callback.setCallbackBody("filename=${object}&size=${size}&mimeType=${mimeType}&height=${imageInfo.height}&width=${imageInfo.width}");
 		callback.setCallbackBodyType("application/x-www-form-urlencoded");
-		// 提交节点
+		// 提交節點
 		String action = "http://" + ALIYUN_OSS_BUCKET_NAME + "." + ALIYUN_OSS_ENDPOINT;
 		try {
 			PolicyConditions policyConds = new PolicyConditions();
@@ -73,7 +73,7 @@ public class OssServiceImpl implements OssService {
 			String policy = BinaryUtil.toBase64String(binaryData);
 			String signature = ossClient.calculatePostSignature(postPolicy);
 			String callbackData = BinaryUtil.toBase64String(JSONUtil.parse(callback).toString().getBytes("utf-8"));
-			// 返回结果
+			// 返回結果
 			result.setAccessKeyId(ossClient.getCredentialsProvider().getCredentials().getAccessKeyId());
 			result.setPolicy(policy);
 			result.setSignature(signature);
@@ -81,7 +81,7 @@ public class OssServiceImpl implements OssService {
 			result.setCallback(callbackData);
 			result.setHost(action);
 		} catch (Exception e) {
-			LOGGER.error("签名生成失败", e);
+			LOGGER.error("簽名生成失敗", e);
 		}
 		return result;
 	}

@@ -9,10 +9,10 @@ public class UmsMemberTag implements Serializable {
 
     private String name;
 
-    @ApiModelProperty(value = "自动打标签完成订单数量")
+    @ApiModelProperty(value = "自動打標籤完成訂單數量")
     private Integer finishOrderCount;
 
-    @ApiModelProperty(value = "自动打标签完成订单金额")
+    @ApiModelProperty(value = "自動打標籤完成訂單金額")
     private BigDecimal finishOrderAmount;
 
     private static final long serialVersionUID = 1L;

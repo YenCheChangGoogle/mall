@@ -9,7 +9,7 @@ public class UmsRoleMenuRelation implements Serializable {
     @ApiModelProperty(value = "角色ID")
     private Long roleId;
 
-    @ApiModelProperty(value = "菜单ID")
+    @ApiModelProperty(value = "菜單ID")
     private Long menuId;
 
     private static final long serialVersionUID = 1L;

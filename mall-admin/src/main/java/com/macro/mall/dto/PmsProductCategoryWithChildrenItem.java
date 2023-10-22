@@ -8,12 +8,12 @@ import lombok.Setter;
 import java.util.List;
 
 /**
- * 包含子级分类的商品分类
+ * 包含子級分類的商品分類
  * Created by macro on 2018/5/25.
  */
 public class PmsProductCategoryWithChildrenItem extends PmsProductCategory {
     @Getter
     @Setter
-    @ApiModelProperty("子级分类")
+    @ApiModelProperty("子級分類")
     private List<PmsProductCategory> children;
 }

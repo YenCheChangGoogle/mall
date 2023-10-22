@@ -19,7 +19,7 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import java.util.List;
 
 /**
- * SpringSecurity相关配置
+ * SpringSecurity相關配置
  * Created by macro on 2018/4/26.
  */
 @Configuration
@@ -30,25 +30,25 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Override
     protected void configure(HttpSecurity http) throws Exception {
-        http.authorizeRequests()//配置权限
-//                .antMatchers("/").access("hasRole('TEST')")//该路径需要TEST角色
-//                .antMatchers("/brand/list").hasAuthority("TEST")//该路径需要TEST权限
+        http.authorizeRequests()//配置權限
+//                .antMatchers("/").access("hasRole('TEST')")//該路徑需要TEST角色
+//                .antMatchers("/brand/list").hasAuthority("TEST")//該路徑需要TEST權限
                 .antMatchers("/**").permitAll()
-                .and()//启用基于http的认证
+                .and()//啟用基於http的認證
                 .httpBasic()
                 .realmName("/")
-                .and()//配置登录页面
+                .and()//配置登錄頁面
                 .formLogin()
                 .loginPage("/login")
                 .failureUrl("/login?error=true")
-                .and()//配置退出路径
+                .and()//配置退出路徑
                 .logout()
                 .logoutSuccessUrl("/")
-//                .and()//记住密码功能
+//                .and()//記住密碼功能
 //                .rememberMe()
 //                .tokenValiditySeconds(60*60*24)
 //                .key("rememberMeKey")
-                .and()//关闭跨域伪造
+                .and()//關閉跨域偽造
                 .csrf()
                 .disable()
                 .headers()//去除X-Frame-Options
@@ -63,7 +63,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Bean
     public UserDetailsService userDetailsService() {
-        //获取登录用户信息
+        //獲取登錄用戶信息
         return new UserDetailsService() {
             @Override
             public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
@@ -73,7 +73,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 if (umsAdminList != null && umsAdminList.size() > 0) {
                     return new AdminUserDetails(umsAdminList.get(0));
                 }
-                throw new UsernameNotFoundException("用户名或密码错误");
+                throw new UsernameNotFoundException("用戶名或密碼錯誤");
             }
         };
     }

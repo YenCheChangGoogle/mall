@@ -8,7 +8,7 @@ import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;
 
 /**
- * 取消超时订单并解锁库存的定时器
+ * 取消超時訂單並解鎖庫存的定時器
  * Created by macro on 2018/8/24.
  */
 @Component
@@ -18,12 +18,12 @@ public class OrderTimeOutCancelTask {
     private OmsPortalOrderService portalOrderService;
 
     /**
-     * cron表达式：Seconds Minutes Hours DayofMonth Month DayofWeek [Year]
-     * 每10分钟扫描一次，扫描超时未支付订单，进行取消操作
+     * cron表達式：Seconds Minutes Hours DayofMonth Month DayofWeek [Year]
+     * 每10分鐘掃瞄一次，掃瞄超時未支付訂單，進行取消操作
      */
     @Scheduled(cron = "0 0/10 * ? * ?")
     private void cancelTimeOutOrder(){
         Integer count = portalOrderService.cancelTimeOutOrder();
-        LOGGER.info("取消订单，并根据sku编号释放锁定库存，取消订单数量：{}",count);
+        LOGGER.info("取消訂單，並根據sku編號釋放鎖定庫存，取消訂單數量：{}",count);
     }
 }

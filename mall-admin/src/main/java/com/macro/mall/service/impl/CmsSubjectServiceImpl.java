@@ -12,7 +12,7 @@ import org.springframework.util.StringUtils;
 import java.util.List;
 
 /**
- * 商品专题管理Service实现类
+ * 商品專題管理Service實現類
  * Created by macro on 2018/6/1.
  */
 @Service

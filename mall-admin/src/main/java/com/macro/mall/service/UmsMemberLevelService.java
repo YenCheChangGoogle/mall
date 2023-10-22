@@ -5,13 +5,13 @@ import com.macro.mall.model.UmsMemberLevel;
 import java.util.List;
 
 /**
- * 会员等级管理Service
+ * 會員等級管理Service
  * Created by macro on 2018/4/26.
  */
 public interface UmsMemberLevelService {
     /**
-     * 获取所有会员等级
-     * @param defaultStatus 是否为默认会员
+     * 獲取所有會員等級
+     * @param defaultStatus 是否為默認會員
      */
     List<UmsMemberLevel> list(Integer defaultStatus);
 }

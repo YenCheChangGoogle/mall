@@ -7,10 +7,10 @@ import java.math.BigDecimal;
 public class OmsOrderItem implements Serializable {
     private Long id;
 
-    @ApiModelProperty(value = "订单id")
+    @ApiModelProperty(value = "訂單id")
     private Long orderId;
 
-    @ApiModelProperty(value = "订单编号")
+    @ApiModelProperty(value = "訂單編號")
     private String orderSn;
 
     private Long productId;
@@ -23,41 +23,41 @@ public class OmsOrderItem implements Serializable {
 
     private String productSn;
 
-    @ApiModelProperty(value = "销售价格")
+    @ApiModelProperty(value = "銷售價格")
     private BigDecimal productPrice;
 
-    @ApiModelProperty(value = "购买数量")
+    @ApiModelProperty(value = "購買數量")
     private Integer productQuantity;
 
-    @ApiModelProperty(value = "商品sku编号")
+    @ApiModelProperty(value = "商品sku編號")
     private Long productSkuId;
 
-    @ApiModelProperty(value = "商品sku条码")
+    @ApiModelProperty(value = "商品sku條碼")
     private String productSkuCode;
 
-    @ApiModelProperty(value = "商品分类id")
+    @ApiModelProperty(value = "商品分類id")
     private Long productCategoryId;
 
-    @ApiModelProperty(value = "商品促销名称")
+    @ApiModelProperty(value = "商品促銷名稱")
     private String promotionName;
 
-    @ApiModelProperty(value = "商品促销分解金额")
+    @ApiModelProperty(value = "商品促銷分解金額")
     private BigDecimal promotionAmount;
 
-    @ApiModelProperty(value = "优惠券优惠分解金额")
+    @ApiModelProperty(value = "優惠券優惠分解金額")
     private BigDecimal couponAmount;
 
-    @ApiModelProperty(value = "积分优惠分解金额")
+    @ApiModelProperty(value = "積分優惠分解金額")
     private BigDecimal integrationAmount;
 
-    @ApiModelProperty(value = "该商品经过优惠后的分解金额")
+    @ApiModelProperty(value = "該商品經過優惠後的分解金額")
     private BigDecimal realAmount;
 
     private Integer giftIntegration;
 
     private Integer giftGrowth;
 
-    @ApiModelProperty(value = "商品销售属性:[{'key':'颜色','value':'颜色'},{'key':'容量','value':'4G'}]")
+    @ApiModelProperty(value = "商品銷售屬性:[{'key':'顏色','value':'顏色'},{'key':'容量','value':'4G'}]")
     private String productAttr;
 
     private static final long serialVersionUID = 1L;

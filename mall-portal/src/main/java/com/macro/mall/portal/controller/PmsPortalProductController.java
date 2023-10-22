@@ -27,8 +27,8 @@ public class PmsPortalProductController {
     @Autowired
     private PmsPortalProductService portalProductService;
 
-    @ApiOperation(value = "综合搜索、筛选、排序")
-    @ApiImplicitParam(name = "sort", value = "排序字段:0->按相关度；1->按新品；2->按销量；3->价格从低到高；4->价格从高到低",
+    @ApiOperation(value = "綜合搜索、篩選、排序")
+    @ApiImplicitParam(name = "sort", value = "排序字段:0->按相關度；1->按新品；2->按銷量；3->價格從低到高；4->價格從高到低",
             defaultValue = "0", allowableValues = "0,1,2,3,4", paramType = "query", dataType = "integer")
     @RequestMapping(value = "/search", method = RequestMethod.GET)
     @ResponseBody
@@ -42,7 +42,7 @@ public class PmsPortalProductController {
         return CommonResult.success(CommonPage.restPage(productList));
     }
 
-    @ApiOperation("以树形结构获取所有商品分类")
+    @ApiOperation("以樹形結構獲取所有商品分類")
     @RequestMapping(value = "/categoryTreeList", method = RequestMethod.GET)
     @ResponseBody
     public CommonResult<List<PmsProductCategoryNode>> categoryTreeList() {
@@ -50,7 +50,7 @@ public class PmsPortalProductController {
         return CommonResult.success(list);
     }
 
-    @ApiOperation("获取前台商品详情")
+    @ApiOperation("獲取前台商品詳情")
     @RequestMapping(value = "/detail/{id}", method = RequestMethod.GET)
     @ResponseBody
     public CommonResult<PmsPortalProductDetail> detail(@PathVariable Long id) {

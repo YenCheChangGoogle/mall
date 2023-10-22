@@ -4,7 +4,7 @@ import lombok.Data;
 import lombok.EqualsAndHashCode;
 
 /**
- * Controller层的日志封装类
+ * Controller層的日誌封裝類
  * Created by macro on 2018/4/26.
  */
 @Data
@@ -16,22 +16,22 @@ public class WebLog {
     private String description;
 
     /**
-     * 操作用户
+     * 操作用戶
      */
     private String username;
 
     /**
-     * 操作时间
+     * 操作時間
      */
     private Long startTime;
 
     /**
-     * 消耗时间
+     * 消耗時間
      */
     private Integer spendTime;
 
     /**
-     * 根路径
+     * 根路徑
      */
     private String basePath;
 
@@ -46,7 +46,7 @@ public class WebLog {
     private String url;
 
     /**
-     * 请求类型
+     * 請求類型
      */
     private String method;
 
@@ -56,12 +56,12 @@ public class WebLog {
     private String ip;
 
     /**
-     * 请求参数
+     * 請求參數
      */
     private Object parameter;
 
     /**
-     * 返回结果
+     * 返回結果
      */
     private Object result;
 

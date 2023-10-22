@@ -3,32 +3,32 @@ package com.macro.mall.portal.service;
 import com.macro.mall.model.UmsMember;
 
 /**
- * 会员信息缓存业务类
+ * 會員信息緩存業務類
  * Created by macro on 2020/3/14.
  */
 public interface UmsMemberCacheService {
     /**
-     * 删除会员用户缓存
+     * 刪除會員用戶緩存
      */
     void delMember(Long memberId);
 
     /**
-     * 获取会员用户缓存
+     * 獲取會員用戶緩存
      */
     UmsMember getMember(String username);
 
     /**
-     * 设置会员用户缓存
+     * 設置會員用戶緩存
      */
     void setMember(UmsMember member);
 
     /**
-     * 设置验证码
+     * 設置驗證碼
      */
     void setAuthCode(String telephone, String authCode);
 
     /**
-     * 获取验证码
+     * 獲取驗證碼
      */
     String getAuthCode(String telephone);
 }

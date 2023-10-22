@@ -9,28 +9,28 @@ public class UmsMember implements Serializable {
 
     private Long memberLevelId;
 
-    @ApiModelProperty(value = "用户名")
+    @ApiModelProperty(value = "用戶名")
     private String username;
 
-    @ApiModelProperty(value = "密码")
+    @ApiModelProperty(value = "密碼")
     private String password;
 
-    @ApiModelProperty(value = "昵称")
+    @ApiModelProperty(value = "暱稱")
     private String nickname;
 
-    @ApiModelProperty(value = "手机号码")
+    @ApiModelProperty(value = "手機號碼")
     private String phone;
 
-    @ApiModelProperty(value = "帐号启用状态:0->禁用；1->启用")
+    @ApiModelProperty(value = "帳號啟用狀態:0->禁用；1->啟用")
     private Integer status;
 
-    @ApiModelProperty(value = "注册时间")
+    @ApiModelProperty(value = "註冊時間")
     private Date createTime;
 
-    @ApiModelProperty(value = "头像")
+    @ApiModelProperty(value = "頭像")
     private String icon;
 
-    @ApiModelProperty(value = "性别：0->未知；1->男；2->女")
+    @ApiModelProperty(value = "性別：0->未知；1->男；2->女")
     private Integer gender;
 
     @ApiModelProperty(value = "生日")
@@ -39,25 +39,25 @@ public class UmsMember implements Serializable {
     @ApiModelProperty(value = "所做城市")
     private String city;
 
-    @ApiModelProperty(value = "职业")
+    @ApiModelProperty(value = "職業")
     private String job;
 
-    @ApiModelProperty(value = "个性签名")
+    @ApiModelProperty(value = "個性簽名")
     private String personalizedSignature;
 
-    @ApiModelProperty(value = "用户来源")
+    @ApiModelProperty(value = "用戶來源")
     private Integer sourceType;
 
-    @ApiModelProperty(value = "积分")
+    @ApiModelProperty(value = "積分")
     private Integer integration;
 
-    @ApiModelProperty(value = "成长值")
+    @ApiModelProperty(value = "成長值")
     private Integer growth;
 
-    @ApiModelProperty(value = "剩余抽奖次数")
+    @ApiModelProperty(value = "剩餘抽獎次數")
     private Integer luckeyCount;
 
-    @ApiModelProperty(value = "历史积分数量")
+    @ApiModelProperty(value = "歷史積分數量")
     private Integer historyIntegration;
 
     private static final long serialVersionUID = 1L;

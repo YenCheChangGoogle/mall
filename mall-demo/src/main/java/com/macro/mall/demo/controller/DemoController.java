@@ -28,7 +28,7 @@ public class DemoController {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(DemoController.class);
 
-    @ApiOperation(value = "获取全部品牌列表")
+    @ApiOperation(value = "獲取全部品牌列表")
     @RequestMapping(value = "/brand/listAll", method = RequestMethod.GET)
     @ResponseBody
     public CommonResult<List<PmsBrand>> getBrandList() {
@@ -45,7 +45,7 @@ public class DemoController {
             commonResult = CommonResult.success(pmsBrand);
             LOGGER.debug("createBrand success:{}", pmsBrand);
         } else {
-            commonResult = CommonResult.failed("操作失败");
+            commonResult = CommonResult.failed("操作失敗");
             LOGGER.debug("createBrand failed:{}", pmsBrand);
         }
         return commonResult;
@@ -61,13 +61,13 @@ public class DemoController {
             commonResult = CommonResult.success(pmsBrandDto);
             LOGGER.debug("updateBrand success:{}", pmsBrandDto);
         } else {
-            commonResult = CommonResult.failed("操作失败");
+            commonResult = CommonResult.failed("操作失敗");
             LOGGER.debug("updateBrand failed:{}", pmsBrandDto);
         }
         return commonResult;
     }
 
-    @ApiOperation(value = "删除品牌")
+    @ApiOperation(value = "刪除品牌")
     @RequestMapping(value = "/brand/delete/{id}", method = RequestMethod.GET)
     @ResponseBody
     public CommonResult deleteBrand(@PathVariable("id") Long id) {
@@ -77,11 +77,11 @@ public class DemoController {
             return CommonResult.success(null);
         } else {
             LOGGER.debug("deleteBrand failed :id={}", id);
-            return CommonResult.failed("操作失败");
+            return CommonResult.failed("操作失敗");
         }
     }
 
-    @ApiOperation(value = "分页获取品牌列表")
+    @ApiOperation(value = "分頁獲取品牌列表")
     @RequestMapping(value = "/brand/list", method = RequestMethod.GET)
     @ResponseBody
     public CommonResult<CommonPage<PmsBrand>> listBrand(@RequestParam(value = "pageNum", defaultValue = "1") Integer pageNum,
@@ -90,7 +90,7 @@ public class DemoController {
         return CommonResult.success(CommonPage.restPage(brandList));
     }
 
-    @ApiOperation(value = "根据编号查询品牌信息")
+    @ApiOperation(value = "根據編號查詢品牌信息")
     @RequestMapping(value = "/brand/{id}", method = RequestMethod.GET)
     @ResponseBody
     public CommonResult<PmsBrand> brand(@PathVariable("id") Long id) {

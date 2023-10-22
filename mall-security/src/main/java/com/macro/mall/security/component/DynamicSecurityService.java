@@ -5,12 +5,12 @@ import org.springframework.security.access.ConfigAttribute;
 import java.util.Map;
 
 /**
- * 动态权限相关业务类
+ * 動態權限相關業務類
  * Created by macro on 2020/2/7.
  */
 public interface DynamicSecurityService {
     /**
-     * 加载资源ANT通配符和资源对应MAP
+     * 加載資源ANT通配符和資源對應MAP
      */
     Map<String, ConfigAttribute> loadDataSource();
 }

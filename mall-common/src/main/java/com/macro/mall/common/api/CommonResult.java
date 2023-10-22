@@ -1,12 +1,12 @@
 package com.macro.mall.common.api;
 
 /**
- * 通用返回对象
+ * 通用返回對像
  * Created by macro on 2019/4/19.
  */
 public class CommonResult<T> {
     /**
-     * 状态码
+     * 狀態碼
      */
     private long code;
     /**
@@ -14,7 +14,7 @@ public class CommonResult<T> {
      */
     private String message;
     /**
-     * 数据封装
+     * 數據封裝
      */
     private T data;
 
@@ -28,18 +28,18 @@ public class CommonResult<T> {
     }
 
     /**
-     * 成功返回结果
+     * 成功返回結果
      *
-     * @param data 获取的数据
+     * @param data 獲取的數據
      */
     public static <T> CommonResult<T> success(T data) {
         return new CommonResult<T>(ResultCode.SUCCESS.getCode(), ResultCode.SUCCESS.getMessage(), data);
     }
 
     /**
-     * 成功返回结果
+     * 成功返回結果
      *
-     * @param data 获取的数据
+     * @param data 獲取的數據
      * @param  message 提示信息
      */
     public static <T> CommonResult<T> success(T data, String message) {
@@ -47,24 +47,24 @@ public class CommonResult<T> {
     }
 
     /**
-     * 失败返回结果
-     * @param errorCode 错误码
+     * 失敗返回結果
+     * @param errorCode 錯誤碼
      */
     public static <T> CommonResult<T> failed(IErrorCode errorCode) {
         return new CommonResult<T>(errorCode.getCode(), errorCode.getMessage(), null);
     }
 
     /**
-     * 失败返回结果
-     * @param errorCode 错误码
-     * @param message 错误信息
+     * 失敗返回結果
+     * @param errorCode 錯誤碼
+     * @param message 錯誤信息
      */
     public static <T> CommonResult<T> failed(IErrorCode errorCode,String message) {
         return new CommonResult<T>(errorCode.getCode(), message, null);
     }
 
     /**
-     * 失败返回结果
+     * 失敗返回結果
      * @param message 提示信息
      */
     public static <T> CommonResult<T> failed(String message) {
@@ -72,21 +72,21 @@ public class CommonResult<T> {
     }
 
     /**
-     * 失败返回结果
+     * 失敗返回結果
      */
     public static <T> CommonResult<T> failed() {
         return failed(ResultCode.FAILED);
     }
 
     /**
-     * 参数验证失败返回结果
+     * 參數驗證失敗返回結果
      */
     public static <T> CommonResult<T> validateFailed() {
         return failed(ResultCode.VALIDATE_FAILED);
     }
 
     /**
-     * 参数验证失败返回结果
+     * 參數驗證失敗返回結果
      * @param message 提示信息
      */
     public static <T> CommonResult<T> validateFailed(String message) {
@@ -94,14 +94,14 @@ public class CommonResult<T> {
     }
 
     /**
-     * 未登录返回结果
+     * 未登錄返回結果
      */
     public static <T> CommonResult<T> unauthorized(T data) {
         return new CommonResult<T>(ResultCode.UNAUTHORIZED.getCode(), ResultCode.UNAUTHORIZED.getMessage(), data);
     }
 
     /**
-     * 未授权返回结果
+     * 未授權返回結果
      */
     public static <T> CommonResult<T> forbidden(T data) {
         return new CommonResult<T>(ResultCode.FORBIDDEN.getCode(), ResultCode.FORBIDDEN.getMessage(), data);

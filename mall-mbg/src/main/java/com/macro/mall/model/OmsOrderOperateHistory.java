@@ -7,19 +7,19 @@ import java.util.Date;
 public class OmsOrderOperateHistory implements Serializable {
     private Long id;
 
-    @ApiModelProperty(value = "订单id")
+    @ApiModelProperty(value = "訂單id")
     private Long orderId;
 
-    @ApiModelProperty(value = "操作人：用户；系统；后台管理员")
+    @ApiModelProperty(value = "操作人：用戶；系統；後臺管理員")
     private String operateMan;
 
-    @ApiModelProperty(value = "操作时间")
+    @ApiModelProperty(value = "操作時間")
     private Date createTime;
 
-    @ApiModelProperty(value = "订单状态：0->待付款；1->待发货；2->已发货；3->已完成；4->已关闭；5->无效订单")
+    @ApiModelProperty(value = "訂單狀態：0->待付款；1->待發貨；2->已發貨；3->已完成；4->已關閉；5->無效訂單")
     private Integer orderStatus;
 
-    @ApiModelProperty(value = "备注")
+    @ApiModelProperty(value = "備註")
     private String note;
 
     private static final long serialVersionUID = 1L;

@@ -9,30 +9,30 @@ public class PmsSkuStock implements Serializable {
 
     private Long productId;
 
-    @ApiModelProperty(value = "sku编码")
+    @ApiModelProperty(value = "sku編碼")
     private String skuCode;
 
     private BigDecimal price;
 
-    @ApiModelProperty(value = "库存")
+    @ApiModelProperty(value = "庫存")
     private Integer stock;
 
-    @ApiModelProperty(value = "预警库存")
+    @ApiModelProperty(value = "預警庫存")
     private Integer lowStock;
 
-    @ApiModelProperty(value = "展示图片")
+    @ApiModelProperty(value = "展示圖片")
     private String pic;
 
-    @ApiModelProperty(value = "销量")
+    @ApiModelProperty(value = "銷量")
     private Integer sale;
 
-    @ApiModelProperty(value = "单品促销价格")
+    @ApiModelProperty(value = "單品促銷價格")
     private BigDecimal promotionPrice;
 
-    @ApiModelProperty(value = "锁定库存")
+    @ApiModelProperty(value = "鎖定庫存")
     private Integer lockStock;
 
-    @ApiModelProperty(value = "商品销售属性，json格式")
+    @ApiModelProperty(value = "商品銷售屬性，json格式")
     private String spData;
 
     private static final long serialVersionUID = 1L;

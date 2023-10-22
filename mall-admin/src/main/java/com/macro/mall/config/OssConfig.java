@@ -6,7 +6,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 /**
- * OSS对象存储相关配置
+ * OSS對像存儲相關配置
  * Created by macro on 2018/5/17.
  */
 @Configuration

@@ -6,12 +6,12 @@ import org.apache.ibatis.annotations.Param;
 import java.util.List;
 
 /**
- * 优选和商品关系自定义Dao
+ * 優選和商品關係自定義Dao
  * Created by macro on 2018/4/26.
  */
 public interface CmsPrefrenceAreaProductRelationDao {
     /**
-     * 批量创建
+     * 批量創建
      */
     int insertList(@Param("list") List<CmsPrefrenceAreaProductRelation> prefrenceAreaProductRelationList);
 }

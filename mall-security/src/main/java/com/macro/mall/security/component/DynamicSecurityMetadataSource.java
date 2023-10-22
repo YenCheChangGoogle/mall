@@ -12,7 +12,7 @@ import javax.annotation.PostConstruct;
 import java.util.*;
 
 /**
- * 动态权限数据源，用于获取动态权限规则
+ * 動態權限數據源，用於獲取動態權限規則
  * Created by macro on 2020/2/7.
  */
 public class DynamicSecurityMetadataSource implements FilterInvocationSecurityMetadataSource {
@@ -35,19 +35,19 @@ public class DynamicSecurityMetadataSource implements FilterInvocationSecurityMe
     public Collection<ConfigAttribute> getAttributes(Object o) throws IllegalArgumentException {
         if (configAttributeMap == null) this.loadDataSource();
         List<ConfigAttribute>  configAttributes = new ArrayList<>();
-        //获取当前访问的路径
+        //獲取當前訪問的路徑
         String url = ((FilterInvocation) o).getRequestUrl();
         String path = URLUtil.getPath(url);
         PathMatcher pathMatcher = new AntPathMatcher();
         Iterator<String> iterator = configAttributeMap.keySet().iterator();
-        //获取访问该路径所需资源
+        //獲取訪問該路徑所需資源
         while (iterator.hasNext()) {
             String pattern = iterator.next();
             if (pathMatcher.match(pattern, path)) {
                 configAttributes.add(configAttributeMap.get(pattern));
             }
         }
-        // 未设置操作请求权限，返回空集合
+        // 未設置操作請求權限，返回空集合
         return configAttributes;
     }
 

@@ -96,10 +96,10 @@ public class RestTemplateDemoController {
     @ResponseBody
     public Object postForEntity3(@RequestParam String name) {
         String url = HOST_MALL_ADMIN + "/productAttribute/category/create";
-        //设置头信息
+        //設置頭信息
         HttpHeaders headers = new HttpHeaders();
         headers.setContentType(MediaType.APPLICATION_FORM_URLENCODED);
-        //构造表单参数
+        //構造表單參數
         MultiValueMap<String, String> params= new LinkedMultiValueMap<>();
         params.add("name", name);
         HttpEntity<MultiValueMap<String, String>> requestEntity = new HttpEntity<>(params, headers);

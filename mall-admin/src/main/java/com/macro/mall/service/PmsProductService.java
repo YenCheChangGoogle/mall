@@ -16,13 +16,13 @@ import java.util.List;
  */
 public interface PmsProductService {
     /**
-     * 创建商品
+     * 創建商品
      */
     @Transactional(isolation = Isolation.DEFAULT,propagation = Propagation.REQUIRED)
     int create(PmsProductParam productParam);
 
     /**
-     * 根据商品编号获取更新信息
+     * 根據商品編號獲取更新信息
      */
     PmsProductResult getUpdateInfo(Long id);
 
@@ -33,41 +33,41 @@ public interface PmsProductService {
     int update(Long id, PmsProductParam productParam);
 
     /**
-     * 分页查询商品
+     * 分頁查詢商品
      */
     List<PmsProduct> list(PmsProductQueryParam productQueryParam, Integer pageSize, Integer pageNum);
 
     /**
-     * 批量修改审核状态
-     * @param ids 产品id
-     * @param verifyStatus 审核状态
-     * @param detail 审核详情
+     * 批量修改審核狀態
+     * @param ids 產品id
+     * @param verifyStatus 審核狀態
+     * @param detail 審核詳情
      */
     @Transactional
     int updateVerifyStatus(List<Long> ids, Integer verifyStatus, String detail);
 
     /**
-     * 批量修改商品上架状态
+     * 批量修改商品上架狀態
      */
     int updatePublishStatus(List<Long> ids, Integer publishStatus);
 
     /**
-     * 批量修改商品推荐状态
+     * 批量修改商品推薦狀態
      */
     int updateRecommendStatus(List<Long> ids, Integer recommendStatus);
 
     /**
-     * 批量修改新品状态
+     * 批量修改新品狀態
      */
     int updateNewStatus(List<Long> ids, Integer newStatus);
 
     /**
-     * 批量删除商品
+     * 批量刪除商品
      */
     int updateDeleteStatus(List<Long> ids, Integer deleteStatus);
 
     /**
-     * 根据商品名称或者货号模糊查询
+     * 根據商品名稱或者貨號模糊查詢
      */
     List<PmsProduct> list(String keyword);
 }

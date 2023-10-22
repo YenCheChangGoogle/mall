@@ -5,15 +5,15 @@ import com.macro.mall.model.SmsCouponHistory;
 import java.util.List;
 
 /**
- * 优惠券领取记录管理Service
+ * 優惠券領取記錄管理Service
  * Created by macro on 2018/11/6.
  */
 public interface SmsCouponHistoryService {
     /**
-     * 分页查询优惠券领取记录
-     * @param couponId 优惠券id
-     * @param useStatus 使用状态
-     * @param orderSn 使用订单号码
+     * 分頁查詢優惠券領取記錄
+     * @param couponId 優惠券id
+     * @param useStatus 使用狀態
+     * @param orderSn 使用訂單號碼
      */
     List<SmsCouponHistory> list(Long couponId, Integer useStatus, String orderSn, Integer pageSize, Integer pageNum);
 }

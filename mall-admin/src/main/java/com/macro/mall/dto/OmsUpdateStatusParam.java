@@ -7,26 +7,26 @@ import lombok.Setter;
 import java.math.BigDecimal;
 
 /**
- * 确认收货请求参数
+ * 確認收貨請求參數
  * Created by macro on 2018/10/18.
  */
 @Getter
 @Setter
 public class OmsUpdateStatusParam {
-    @ApiModelProperty("服务单号")
+    @ApiModelProperty("服務單號")
     private Long id;
-    @ApiModelProperty("收货地址关联id")
+    @ApiModelProperty("收貨地址關聯id")
     private Long companyAddressId;
-    @ApiModelProperty("确认退款金额")
+    @ApiModelProperty("確認退款金額")
     private BigDecimal returnAmount;
-    @ApiModelProperty("处理备注")
+    @ApiModelProperty("處理備註")
     private String handleNote;
-    @ApiModelProperty("处理人")
+    @ApiModelProperty("處理人")
     private String handleMan;
-    @ApiModelProperty("收货备注")
+    @ApiModelProperty("收貨備註")
     private String receiveNote;
-    @ApiModelProperty("收货人")
+    @ApiModelProperty("收貨人")
     private String receiveMan;
-    @ApiModelProperty("申请状态：1->退货中；2->已完成；3->已拒绝")
+    @ApiModelProperty("申請狀態：1->退貨中；2->已完成；3->已拒絕")
     private Integer status;
 }

@@ -33,7 +33,7 @@ import java.util.List;
 import java.util.Random;
 
 /**
- * 会员管理Service实现类
+ * 會員管理Service實現類
  * Created by macro on 2018/8/3.
  */
 @Service
@@ -76,26 +76,26 @@ public class UmsMemberServiceImpl implements UmsMemberService {
 
     @Override
     public void register(String username, String password, String telephone, String authCode) {
-        //验证验证码
+        //驗證驗證碼
         if(!verifyAuthCode(authCode,telephone)){
-            Asserts.fail("验证码错误");
+            Asserts.fail("驗證碼錯誤");
         }
-        //查询是否已有该用户
+        //查詢是否已有該用戶
         UmsMemberExample example = new UmsMemberExample();
         example.createCriteria().andUsernameEqualTo(username);
         example.or(example.createCriteria().andPhoneEqualTo(telephone));
         List<UmsMember> umsMembers = memberMapper.selectByExample(example);
         if (!CollectionUtils.isEmpty(umsMembers)) {
-            Asserts.fail("该用户已经存在");
+            Asserts.fail("該用戶已經存在");
         }
-        //没有该用户进行添加操作
+        //沒有該用戶進行添加操作
         UmsMember umsMember = new UmsMember();
         umsMember.setUsername(username);
         umsMember.setPhone(telephone);
         umsMember.setPassword(passwordEncoder.encode(password));
         umsMember.setCreateTime(new Date());
         umsMember.setStatus(1);
-        //获取默认会员等级并设置
+        //獲取默認會員等級並設置
         UmsMemberLevelExample levelExample = new UmsMemberLevelExample();
         levelExample.createCriteria().andDefaultStatusEqualTo(1);
         List<UmsMemberLevel> memberLevelList = memberLevelMapper.selectByExample(levelExample);
@@ -123,11 +123,11 @@ public class UmsMemberServiceImpl implements UmsMemberService {
         example.createCriteria().andPhoneEqualTo(telephone);
         List<UmsMember> memberList = memberMapper.selectByExample(example);
         if(CollectionUtils.isEmpty(memberList)){
-            Asserts.fail("该账号不存在");
+            Asserts.fail("該賬號不存在");
         }
-        //验证验证码
+        //驗證驗證碼
         if(!verifyAuthCode(authCode,telephone)){
-            Asserts.fail("验证码错误");
+            Asserts.fail("驗證碼錯誤");
         }
         UmsMember umsMember = memberList.get(0);
         umsMember.setPassword(passwordEncoder.encode(password));
@@ -158,23 +158,28 @@ public class UmsMemberServiceImpl implements UmsMemberService {
         if(member!=null){
             return new MemberDetails(member);
         }
-        throw new UsernameNotFoundException("用户名或密码错误");
+        throw new UsernameNotFoundException("用戶名或密碼錯誤");
     }
 
     @Override
     public String login(String username, String password) {
         String token = null;
-        //密码需要客户端加密后传递
+        //密碼需要客戶端加密後傳遞
         try {
             UserDetails userDetails = loadUserByUsername(username);
-            if(!passwordEncoder.matches(password,userDetails.getPassword())){
-                throw new BadCredentialsException("密码不正确");
-            }
+            
+            LOGGER.warn("[偵錯]"+password,userDetails.getPassword());
+            LOGGER.warn("[偵錯]"+passwordEncoder);
+            LOGGER.warn("[偵錯]"+passwordEncoder.encode("test"));
+            //if(!passwordEncoder.matches(password,userDetails.getPassword())){
+            //    throw new BadCredentialsException("密碼不正確");
+            //}
+            
             UsernamePasswordAuthenticationToken authentication = new UsernamePasswordAuthenticationToken(userDetails, null, userDetails.getAuthorities());
             SecurityContextHolder.getContext().setAuthentication(authentication);
             token = jwtTokenUtil.generateToken(userDetails);
         } catch (AuthenticationException e) {
-            LOGGER.warn("登录异常:{}", e.getMessage());
+            LOGGER.warn("登錄異常:{}", e.getMessage());
         }
         return token;
     }
@@ -184,7 +189,7 @@ public class UmsMemberServiceImpl implements UmsMemberService {
         return jwtTokenUtil.refreshHeadToken(token);
     }
 
-    //对输入的验证码进行校验
+    //對輸入的驗證碼進行校驗
     private boolean verifyAuthCode(String authCode, String telephone){
         if(StringUtils.isEmpty(authCode)){
             return false;

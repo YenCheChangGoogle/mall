@@ -1,10 +1,10 @@
-# 该镜像需要依赖的基础镜像
+# 該鏡像需要依賴的基礎鏡像
 FROM java:8
-# 将当前目录下的jar包复制到docker容器的/目录下
+# 將當前目錄下的jar包複製到docker容器的/目錄下
 ADD mall-admin-1.0-SNAPSHOT.jar /mall-admin-1.0-SNAPSHOT.jar
-# 声明服务运行在8088端口
+# 聲明服務運行在8088端口
 EXPOSE 8080
-# 指定docker容器启动时运行jar包
+# 指定docker容器啟動時運行jar包
 ENTRYPOINT ["java", "-jar","/mall-admin-1.0-SNAPSHOT.jar"]
-# 指定维护者的名字
+# 指定維護者的名字
 MAINTAINER macro

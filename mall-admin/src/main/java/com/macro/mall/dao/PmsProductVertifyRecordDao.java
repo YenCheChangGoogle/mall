@@ -6,12 +6,12 @@ import org.apache.ibatis.annotations.Param;
 import java.util.List;
 
 /**
- * 商品审核日志管理自定义Dao
+ * 商品審核日誌管理自定義Dao
  * Created by macro on 2018/4/27.
  */
 public interface PmsProductVertifyRecordDao {
     /**
-     * 批量创建
+     * 批量創建
      */
     int insertList(@Param("list") List<PmsProductVertifyRecord> list);
 }

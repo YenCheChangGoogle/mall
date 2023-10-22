@@ -15,11 +15,11 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 /**
- * 购物车管理Controller
+ * 購物車管理Controller
  * Created by macro on 2018/8/2.
  */
 @Controller
-@Api(tags = "OmsCartItemController", description = "购物车管理")
+@Api(tags = "OmsCartItemController", description = "購物車管理")
 @RequestMapping("/cart")
 public class OmsCartItemController {
     @Autowired
@@ -27,7 +27,7 @@ public class OmsCartItemController {
     @Autowired
     private UmsMemberService memberService;
 
-    @ApiOperation("添加商品到购物车")
+    @ApiOperation("添加商品到購物車")
     @RequestMapping(value = "/add", method = RequestMethod.POST)
     @ResponseBody
     public CommonResult add(@RequestBody OmsCartItem cartItem) {
@@ -38,7 +38,7 @@ public class OmsCartItemController {
         return CommonResult.failed();
     }
 
-    @ApiOperation("获取某个会员的购物车列表")
+    @ApiOperation("獲取某個會員的購物車列表")
     @RequestMapping(value = "/list", method = RequestMethod.GET)
     @ResponseBody
     public CommonResult<List<OmsCartItem>> list() {
@@ -46,7 +46,7 @@ public class OmsCartItemController {
         return CommonResult.success(cartItemList);
     }
 
-    @ApiOperation("获取某个会员的购物车列表,包括促销信息")
+    @ApiOperation("獲取某個會員的購物車列表,包括促銷信息")
     @RequestMapping(value = "/list/promotion", method = RequestMethod.GET)
     @ResponseBody
     public CommonResult<List<CartPromotionItem>> listPromotion(@RequestParam(required = false) List<Long> cartIds) {
@@ -54,7 +54,7 @@ public class OmsCartItemController {
         return CommonResult.success(cartPromotionItemList);
     }
 
-    @ApiOperation("修改购物车中某个商品的数量")
+    @ApiOperation("修改購物車中某個商品的數量")
     @RequestMapping(value = "/update/quantity", method = RequestMethod.GET)
     @ResponseBody
     public CommonResult updateQuantity(@RequestParam Long id,
@@ -66,7 +66,7 @@ public class OmsCartItemController {
         return CommonResult.failed();
     }
 
-    @ApiOperation("获取购物车中某个商品的规格,用于重选规格")
+    @ApiOperation("獲取購物車中某個商品的規格,用於重選規格")
     @RequestMapping(value = "/getProduct/{productId}", method = RequestMethod.GET)
     @ResponseBody
     public CommonResult<CartProduct> getCartProduct(@PathVariable Long productId) {
@@ -74,7 +74,7 @@ public class OmsCartItemController {
         return CommonResult.success(cartProduct);
     }
 
-    @ApiOperation("修改购物车中商品的规格")
+    @ApiOperation("修改購物車中商品的規格")
     @RequestMapping(value = "/update/attr", method = RequestMethod.POST)
     @ResponseBody
     public CommonResult updateAttr(@RequestBody OmsCartItem cartItem) {
@@ -85,7 +85,7 @@ public class OmsCartItemController {
         return CommonResult.failed();
     }
 
-    @ApiOperation("删除购物车中的某个商品")
+    @ApiOperation("刪除購物車中的某個商品")
     @RequestMapping(value = "/delete", method = RequestMethod.POST)
     @ResponseBody
     public CommonResult delete(@RequestParam("ids") List<Long> ids) {
@@ -96,7 +96,7 @@ public class OmsCartItemController {
         return CommonResult.failed();
     }
 
-    @ApiOperation("清空购物车")
+    @ApiOperation("清空購物車")
     @RequestMapping(value = "/clear", method = RequestMethod.POST)
     @ResponseBody
     public CommonResult clear() {

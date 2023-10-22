@@ -1,0 +1,4 @@
+直接運行com.macro.mall.portal.MallPortalApplication的main方法即可
+http://localhost:8085/swagger-ui/
+
+與mall-app-web專案互動 前台是 http://localhost:8060/#/

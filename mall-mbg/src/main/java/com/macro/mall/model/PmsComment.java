@@ -13,27 +13,27 @@ public class PmsComment implements Serializable {
 
     private String productName;
 
-    @ApiModelProperty(value = "评价星数：0->5")
+    @ApiModelProperty(value = "評價星數：0->5")
     private Integer star;
 
-    @ApiModelProperty(value = "评价的ip")
+    @ApiModelProperty(value = "評價的ip")
     private String memberIp;
 
     private Date createTime;
 
     private Integer showStatus;
 
-    @ApiModelProperty(value = "购买时的商品属性")
+    @ApiModelProperty(value = "購買時的商品屬性")
     private String productAttribute;
 
     private Integer collectCouont;
 
     private Integer readCount;
 
-    @ApiModelProperty(value = "上传图片地址，以逗号隔开")
+    @ApiModelProperty(value = "上傳圖片地址，以逗號隔開")
     private String pics;
 
-    @ApiModelProperty(value = "评论用户头像")
+    @ApiModelProperty(value = "評論用戶頭像")
     private String memberIcon;
 
     private Integer replayCount;

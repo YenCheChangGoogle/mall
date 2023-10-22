@@ -13,17 +13,17 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 /**
- * 首页人气推荐管理Controller
+ * 首頁人氣推薦管理Controller
  * Created by macro on 2018/11/6.
  */
 @Controller
-@Api(tags = "SmsHomeRecommendProductController", description = "首页人气推荐管理")
+@Api(tags = "SmsHomeRecommendProductController", description = "首頁人氣推薦管理")
 @RequestMapping("/home/recommendProduct")
 public class SmsHomeRecommendProductController {
     @Autowired
     private SmsHomeRecommendProductService recommendProductService;
 
-    @ApiOperation("添加首页推荐")
+    @ApiOperation("添加首頁推薦")
     @RequestMapping(value = "/create", method = RequestMethod.POST)
     @ResponseBody
     public CommonResult create(@RequestBody List<SmsHomeRecommendProduct> homeRecommendProductList) {
@@ -34,7 +34,7 @@ public class SmsHomeRecommendProductController {
         return CommonResult.failed();
     }
 
-    @ApiOperation("修改推荐排序")
+    @ApiOperation("修改推薦排序")
     @RequestMapping(value = "/update/sort/{id}", method = RequestMethod.POST)
     @ResponseBody
     public CommonResult updateSort(@PathVariable Long id, Integer sort) {
@@ -45,7 +45,7 @@ public class SmsHomeRecommendProductController {
         return CommonResult.failed();
     }
 
-    @ApiOperation("批量删除推荐")
+    @ApiOperation("批量刪除推薦")
     @RequestMapping(value = "/delete", method = RequestMethod.POST)
     @ResponseBody
     public CommonResult delete(@RequestParam("ids") List<Long> ids) {
@@ -56,7 +56,7 @@ public class SmsHomeRecommendProductController {
         return CommonResult.failed();
     }
 
-    @ApiOperation("批量修改推荐状态")
+    @ApiOperation("批量修改推薦狀態")
     @RequestMapping(value = "/update/recommendStatus", method = RequestMethod.POST)
     @ResponseBody
     public CommonResult updateRecommendStatus(@RequestParam("ids") List<Long> ids, @RequestParam Integer recommendStatus) {
@@ -67,7 +67,7 @@ public class SmsHomeRecommendProductController {
         return CommonResult.failed();
     }
 
-    @ApiOperation("分页查询推荐")
+    @ApiOperation("分頁查詢推薦")
     @RequestMapping(value = "/list", method = RequestMethod.GET)
     @ResponseBody
     public CommonResult<CommonPage<SmsHomeRecommendProduct>> list(@RequestParam(value = "productName", required = false) String productName,

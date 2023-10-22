@@ -14,7 +14,7 @@ import java.util.Date;
 import java.util.List;
 
 /**
- * 后台资源管理Service实现类
+ * 後台資源管理Service實現類
  * Created by macro on 2020/2/2.
  */
 @Service

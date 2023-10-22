@@ -15,11 +15,11 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * JwtToken生成的工具类
+ * JwtToken生成的工具類
  * JWT token的格式：header.payload.signature
- * header的格式（算法、token的类型）：
+ * header的格式（算法、token的類型）：
  * {"alg": "HS512","typ": "JWT"}
- * payload的格式（用户名、创建时间、生成时间）：
+ * payload的格式（用戶名、創建時間、生成時間）：
  * {"sub":"wang","created":1489079981393,"exp":1489684781}
  * signature的生成算法：
  * HMACSHA512(base64UrlEncode(header) + "." +base64UrlEncode(payload),secret)
@@ -37,7 +37,7 @@ public class JwtTokenUtil {
     private String tokenHead;
 
     /**
-     * 根据负责生成JWT的token
+     * 根據負責生成JWT的token
      */
     private String generateToken(Map<String, Object> claims) {
         return Jwts.builder()
@@ -48,7 +48,7 @@ public class JwtTokenUtil {
     }
 
     /**
-     * 从token中获取JWT中的负载
+     * 從token中獲取JWT中的負載
      */
     private Claims getClaimsFromToken(String token) {
         Claims claims = null;
@@ -58,20 +58,20 @@ public class JwtTokenUtil {
                     .parseClaimsJws(token)
                     .getBody();
         } catch (Exception e) {
-            LOGGER.info("JWT格式验证失败:{}", token);
+            LOGGER.info("JWT格式驗證失敗:{}", token);
         }
         return claims;
     }
 
     /**
-     * 生成token的过期时间
+     * 生成token的過期時間
      */
     private Date generateExpirationDate() {
         return new Date(System.currentTimeMillis() + expiration * 1000);
     }
 
     /**
-     * 从token中获取登录用户名
+     * 從token中獲取登錄用戶名
      */
     public String getUserNameFromToken(String token) {
         String username;
@@ -85,10 +85,10 @@ public class JwtTokenUtil {
     }
 
     /**
-     * 验证token是否还有效
+     * 驗證token是否還有效
      *
-     * @param token       客户端传入的token
-     * @param userDetails 从数据库中查询出来的用户信息
+     * @param token       客戶端傳入的token
+     * @param userDetails 從數據庫中查詢出來的用戶信息
      */
     public boolean validateToken(String token, UserDetails userDetails) {
         String username = getUserNameFromToken(token);
@@ -96,7 +96,7 @@ public class JwtTokenUtil {
     }
 
     /**
-     * 判断token是否已经失效
+     * 判斷token是否已經失效
      */
     private boolean isTokenExpired(String token) {
         Date expiredDate = getExpiredDateFromToken(token);
@@ -104,7 +104,7 @@ public class JwtTokenUtil {
     }
 
     /**
-     * 从token中获取过期时间
+     * 從token中獲取過期時間
      */
     private Date getExpiredDateFromToken(String token) {
         Claims claims = getClaimsFromToken(token);
@@ -112,7 +112,7 @@ public class JwtTokenUtil {
     }
 
     /**
-     * 根据用户信息生成token
+     * 根據用戶信息生成token
      */
     public String generateToken(UserDetails userDetails) {
         Map<String, Object> claims = new HashMap<>();
@@ -122,9 +122,9 @@ public class JwtTokenUtil {
     }
 
     /**
-     * 当原来的token没过期时是可以刷新的
+     * 當原來的token沒過期時是可以刷新的
      *
-     * @param oldToken 带tokenHead的token
+     * @param oldToken 帶tokenHead的token
      */
     public String refreshHeadToken(String oldToken) {
         if(StrUtil.isEmpty(oldToken)){
@@ -134,16 +134,16 @@ public class JwtTokenUtil {
         if(StrUtil.isEmpty(token)){
             return null;
         }
-        //token校验不通过
+        //token校驗不通過
         Claims claims = getClaimsFromToken(token);
         if(claims==null){
             return null;
         }
-        //如果token已经过期，不支持刷新
+        //如果token已經過期，不支持刷新
         if(isTokenExpired(token)){
             return null;
         }
-        //如果token在30分钟之内刚刷新过，返回原token
+        //如果token在30分鐘之內剛刷新過，返回原token
         if(tokenRefreshJustBefore(token,30*60)){
             return token;
         }else{
@@ -153,15 +153,15 @@ public class JwtTokenUtil {
     }
 
     /**
-     * 判断token在指定时间内是否刚刚刷新过
+     * 判斷token在指定時間內是否剛剛刷新過
      * @param token 原token
-     * @param time 指定时间（秒）
+     * @param time 指定時間（秒）
      */
     private boolean tokenRefreshJustBefore(String token, int time) {
         Claims claims = getClaimsFromToken(token);
         Date created = claims.get(CLAIM_KEY_CREATED, Date.class);
         Date refreshDate = new Date();
-        //刷新时间在创建时间的指定时间内
+        //刷新時間在創建時間的指定時間內
         if(refreshDate.after(created)&&refreshDate.before(DateUtil.offsetSecond(created,time))){
             return true;
         }

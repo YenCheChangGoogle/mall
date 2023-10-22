@@ -15,7 +15,7 @@ import java.util.Date;
 import java.util.List;
 
 /**
- * 会员关注Service实现类
+ * 會員關注Service實現類
  * Created by macro on 2018/8/2.
  */
 @Service

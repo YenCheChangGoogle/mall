@@ -1,0 +1,2 @@
+直接在mall專案上 執行 mvn install
+將相關的程式編譯放置到maven函式庫

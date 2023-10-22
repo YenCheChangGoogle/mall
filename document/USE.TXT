@@ -1,0 +1,122 @@
+▓ RabbitMQ安裝
+docker pull rabbitmq:3.12.2-management
+
+啟動RabbitMQ服務
+MAC版
+docker run -p 5672:5672 -p 15672:15672 --name rabbitmq  -v /Users/yenchechang/DockerDemo/mydata/rabbitmq/data:/var/lib/rabbitmq  -d rabbitmq:3.12.2-management
+WIN11版
+docker run -p 5672:5672 -p 15672:15672 --name rabbitmq  -v C:/Docker/rabbitmq:/var/lib/rabbitmq  -d rabbitmq:3.12.2-management
+
+
+開啟防火牆
+firewall-cmd --zone=public --add-port=15672/tcp --permanent
+firewall-cmd --reload
+
+MAC  指令是 pfctl  設定檔主要是 /etc/pf.conf
+預覽規則 sudo pfctl -vnf /etc/pf.conf
+重啟防火牆 sudo pfctl -d; sudo pfctl -ef /etc/pf.conf
+檢視狀態 sudo pfctl -s state
+
+訪問地址查看是否安裝成功： http://127.0.0.1:15672 使用 guest / guest 登入
+記住: 因為在專案 mall-portal有設定使用帳密mall/mall來存取, 所以需要在管理畫面加入使用者 帳密mall/mall
+
+例如: application-dev.yml 裡面有設定
+  rabbitmq:
+    host: rabbit
+    port: 5672
+    virtual-host: /
+    username: mall
+    password: mall
+
+
+
+▓ Elasticsearch安裝
+
+docker pull elasticsearch:7.17.3
+
+修改虛擬記憶體區域大小 否則會因為過小而無法啟動
+sysctl -w vm.max_map_count=262144
+
+啟動Elasticsearch服務
+MAC版
+docker run -p 9200:9200 -p 9300:9300  --name elasticsearch  -e "discovery.type=single-node"  -e "cluster.name=elasticsearch"  -e "ES_JAVA_OPTS=-Xms512m -Xmx1024m"  -v /Users/yenchechang/DockerDemo/mydata/elasticsearch/plugins:/usr/share/elasticsearch/plugins  -v /Users/yenchechang/DockerDemo/mydata/elasticsearch/data:/usr/share/elasticsearch/data  -d elasticsearch:7.17.3
+WIN11版
+docker run -p 9200:9200 -p 9300:9300  --name elasticsearch  -e "discovery.type=single-node"  -e "cluster.name=elasticsearch"  -e "ES_JAVA_OPTS=-Xms512m -Xmx1024m"  -v C:/Docker/elasticsearch/usr/share/elasticsearch/plugins:/usr/share/elasticsearch/plugins  -v C:/Docker/elasticsearch/usr/share/elasticsearch/data:/usr/share/elasticsearch/data  -d elasticsearch:7.17.3
+
+啟動時會發現/usr/share/elasticsearch/data目錄沒有存取權, 只需要修改/mydata/elasticsearch/data目錄的權限, 再重新啟動即可
+chmod 777 /mydata/elasticsearch/data/
+
+安裝中文分詞器IKAnalyzer https://github.com/medcl/elasticsearch-analysis-ik/releases (注意:要配合Elasticsearch 安裝的版本)
+https://github.com/medcl/elasticsearch-analysis-ik/releases/download/v7.17.3/elasticsearch-analysis-ik-7.17.3.zip
+下載完成後解壓到Elasticsearch的 /Users/yenchechang/DockerDemo/mydata/elasticsearch/plugins目錄下
+
+重啟服務
+docker restart elasticsearch
+
+開啟防火牆
+firewall-cmd --zone=public --add-port=9200/tcp --permanent
+firewall-cmd --reload
+
+啟動成功的話，用瀏覽器打開 http://localhost:9200
+
+
+▓ Logstash安裝
+
+docker pull logstash:7.17.3
+
+修改Logstash的組態文件logstash.conf中output節點下的Elasticsearch連接地址為es:9200
+組態文件地址：https://github.com/macrozheng/mall/blob/master/document/elk/logstash.conf
+ 
+
+啟用Logstash服務
+MAC版
+docker run --name logstash -p 4560:4560 -p 4561:4561 -p 4562:4562 -p 4563:4563  --link elasticsearch:es  -v /Users/yenchechang/DockerDemo/mydata/logstash/usr/share/logstash/pipeline:/usr/share/logstash/pipeline  -d logstash:7.17.3
+WIN11版
+docker run --name logstash -p 4560:4560 -p 4561:4561 -p 4562:4562 -p 4563:4563  --link elasticsearch:es  -v C:/Docker/logstash/usr/share/logstash/pipeline:/usr/share/logstash/pipeline  -d logstash:7.17.3
+
+進入容器內部 安裝 json_lines外掛
+logstash-plugin install logstash-codec-json_lines
+
+
+▓ Kibana安裝
+
+docker pull kibana:7.17.3
+
+啟動Kibana服務
+docker run --name kibana -p 5601:5601  --link elasticsearch:es  -e "elasticsearch.hosts=http://es:9200"  -d kibana:7.17.3
+
+開啟防火牆
+firewall-cmd --zone=public --add-port=5601/tcp --permanent
+firewall-cmd --reload
+
+進行測試 http://localhost:5601
+
+
+▓ MongoDB安裝
+
+docker pull mongo:4
+
+使用docker命令啟動
+MAC版
+docker run -p 27017:27017 --name mongo  -v /Users/yenchechang/DockerDemo/mydata/mongo/db:/data/db  -d mongo:4
+WIN11版
+docker run -p 27017:27017 --name mongo  -v C:/Docker/mongo/data/db:/data/db  -d mongo:4
+
+▓ MinIO安裝
+
+docker pull minio/minio
+
+下載完成後使用如下命令運行MinIO服務, 注意使用--console-address指定MinIO Console的運行連接埠(否則會隨機連接埠運行)
+MAC版
+docker run -p 9090:9000 -p 9001:9001 --name minio  -v /Users/yenchechang/DockerDemo/mydata/minio/data:/data  -e MINIO_ROOT_USER=minioadmin  -e MINIO_ROOT_PASSWORD=minioadmin  -d minio/minio server  /data  --console-address ":9001"
+WIN11版
+docker run -p 9090:9000 -p 9001:9001 --name minio  -v C:/Docker/minio/data:/data  -e MINIO_ROOT_USER=minioadmin  -e MINIO_ROOT_PASSWORD=minioadmin  -d minio/minio server  /data  --console-address ":9001"
+
+進行測試 http://localhost:9090 帳密minioadmin / minioadmin
+
+
+
+
+
+
+

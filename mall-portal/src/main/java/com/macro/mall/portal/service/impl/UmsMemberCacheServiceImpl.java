@@ -10,7 +10,7 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
 /**
- * UmsMemberCacheService实现类
+ * UmsMemberCacheService實現類
  * Created by macro on 2020/3/14.
  */
 @Service

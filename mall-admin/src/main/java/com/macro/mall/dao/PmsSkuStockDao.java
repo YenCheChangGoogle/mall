@@ -6,7 +6,7 @@ import org.apache.ibatis.annotations.Param;
 import java.util.List;
 
 /**
- * 商品SKU管理自定义Dao
+ * 商品SKU管理自定義Dao
  * Created by macro on 2018/4/26.
  */
 public interface PmsSkuStockDao {
@@ -16,7 +16,7 @@ public interface PmsSkuStockDao {
     int insertList(@Param("list")List<PmsSkuStock> skuStockList);
 
     /**
-     * 批量插入或替换操作
+     * 批量插入或替換操作
      */
     int replaceList(@Param("list")List<PmsSkuStock> skuStockList);
 }

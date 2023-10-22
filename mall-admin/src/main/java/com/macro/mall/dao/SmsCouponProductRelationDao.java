@@ -6,12 +6,12 @@ import org.apache.ibatis.annotations.Param;
 import java.util.List;
 
 /**
- * 优惠券和商品关系自定义Dao
+ * 優惠券和商品關係自定義Dao
  * Created by macro on 2018/8/28.
  */
 public interface SmsCouponProductRelationDao {
     /**
-     * 批量创建
+     * 批量創建
      */
     int insertList(@Param("list")List<SmsCouponProductRelation> productRelationList);
 }

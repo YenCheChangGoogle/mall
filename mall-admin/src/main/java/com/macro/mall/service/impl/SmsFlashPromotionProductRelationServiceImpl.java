@@ -13,7 +13,7 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 
 /**
- * 限时购商品关联管理Service实现类
+ * 限時購商品關聯管理Service實現類
  * Created by macro on 2018/11/16.
  */
 @Service

@@ -20,93 +20,93 @@ public class PmsProduct implements Serializable {
 
     private String pic;
 
-    @ApiModelProperty(value = "货号")
+    @ApiModelProperty(value = "貨號")
     private String productSn;
 
-    @ApiModelProperty(value = "删除状态：0->未删除；1->已删除")
+    @ApiModelProperty(value = "刪除狀態：0->未刪除；1->已刪除")
     private Integer deleteStatus;
 
-    @ApiModelProperty(value = "上架状态：0->下架；1->上架")
+    @ApiModelProperty(value = "上架狀態：0->下架；1->上架")
     private Integer publishStatus;
 
-    @ApiModelProperty(value = "新品状态:0->不是新品；1->新品")
+    @ApiModelProperty(value = "新品狀態:0->不是新品；1->新品")
     private Integer newStatus;
 
-    @ApiModelProperty(value = "推荐状态；0->不推荐；1->推荐")
+    @ApiModelProperty(value = "推薦狀態；0->不推薦；1->推薦")
     private Integer recommandStatus;
 
-    @ApiModelProperty(value = "审核状态：0->未审核；1->审核通过")
+    @ApiModelProperty(value = "審核狀態：0->未審核；1->審核通過")
     private Integer verifyStatus;
 
     @ApiModelProperty(value = "排序")
     private Integer sort;
 
-    @ApiModelProperty(value = "销量")
+    @ApiModelProperty(value = "銷量")
     private Integer sale;
 
     private BigDecimal price;
 
-    @ApiModelProperty(value = "促销价格")
+    @ApiModelProperty(value = "促銷價格")
     private BigDecimal promotionPrice;
 
-    @ApiModelProperty(value = "赠送的成长值")
+    @ApiModelProperty(value = "贈送的成長值")
     private Integer giftGrowth;
 
-    @ApiModelProperty(value = "赠送的积分")
+    @ApiModelProperty(value = "贈送的積分")
     private Integer giftPoint;
 
-    @ApiModelProperty(value = "限制使用的积分数")
+    @ApiModelProperty(value = "限制使用的積分數")
     private Integer usePointLimit;
 
-    @ApiModelProperty(value = "副标题")
+    @ApiModelProperty(value = "副標題")
     private String subTitle;
 
-    @ApiModelProperty(value = "市场价")
+    @ApiModelProperty(value = "市場價")
     private BigDecimal originalPrice;
 
-    @ApiModelProperty(value = "库存")
+    @ApiModelProperty(value = "庫存")
     private Integer stock;
 
-    @ApiModelProperty(value = "库存预警值")
+    @ApiModelProperty(value = "庫存預警值")
     private Integer lowStock;
 
-    @ApiModelProperty(value = "单位")
+    @ApiModelProperty(value = "單位")
     private String unit;
 
-    @ApiModelProperty(value = "商品重量，默认为克")
+    @ApiModelProperty(value = "商品重量，默認為克")
     private BigDecimal weight;
 
-    @ApiModelProperty(value = "是否为预告商品：0->不是；1->是")
+    @ApiModelProperty(value = "是否為預告商品：0->不是；1->是")
     private Integer previewStatus;
 
-    @ApiModelProperty(value = "以逗号分割的产品服务：1->无忧退货；2->快速退款；3->免费包邮")
+    @ApiModelProperty(value = "以逗號分割的產品服務：1->無憂退貨；2->快速退款；3->免費包郵")
     private String serviceIds;
 
     private String keywords;
 
     private String note;
 
-    @ApiModelProperty(value = "画册图片，连产品图片限制为5张，以逗号分割")
+    @ApiModelProperty(value = "畫冊圖片，連產品圖片限制為5張，以逗號分割")
     private String albumPics;
 
     private String detailTitle;
 
-    @ApiModelProperty(value = "促销开始时间")
+    @ApiModelProperty(value = "促銷開始時間")
     private Date promotionStartTime;
 
-    @ApiModelProperty(value = "促销结束时间")
+    @ApiModelProperty(value = "促銷結束時間")
     private Date promotionEndTime;
 
-    @ApiModelProperty(value = "活动限购数量")
+    @ApiModelProperty(value = "活動限購數量")
     private Integer promotionPerLimit;
 
-    @ApiModelProperty(value = "促销类型：0->没有促销使用原价;1->使用促销价；2->使用会员价；3->使用阶梯价格；4->使用满减价格；5->限时购")
+    @ApiModelProperty(value = "促銷類型：0->沒有促銷使用原價;1->使用促銷價；2->使用會員價；3->使用階梯價格；4->使用滿減價格；5->限時購")
     private Integer promotionType;
 
-    @ApiModelProperty(value = "品牌名称")
+    @ApiModelProperty(value = "品牌名稱")
     private String brandName;
 
-    @ApiModelProperty(value = "商品分类名称")
+    @ApiModelProperty(value = "商品分類名稱")
     private String productCategoryName;
 
     @ApiModelProperty(value = "商品描述")
@@ -114,10 +114,10 @@ public class PmsProduct implements Serializable {
 
     private String detailDesc;
 
-    @ApiModelProperty(value = "产品详情网页内容")
+    @ApiModelProperty(value = "產品詳情網頁內容")
     private String detailHtml;
 
-    @ApiModelProperty(value = "移动端网页详情")
+    @ApiModelProperty(value = "移動端網頁詳情")
     private String detailMobileHtml;
 
     private static final long serialVersionUID = 1L;

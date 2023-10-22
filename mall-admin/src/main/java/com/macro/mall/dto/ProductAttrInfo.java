@@ -6,14 +6,14 @@ import lombok.Data;
 import lombok.EqualsAndHashCode;
 
 /**
- * 商品分类对应属性信息
+ * 商品分類對應屬性信息
  * Created by macro on 2018/5/23.
  */
 @Data
 @EqualsAndHashCode(callSuper = false)
 public class ProductAttrInfo {
-    @ApiModelProperty("商品属性ID")
+    @ApiModelProperty("商品屬性ID")
     private Long attributeId;
-    @ApiModelProperty("商品属性分类ID")
+    @ApiModelProperty("商品屬性分類ID")
     private Long attributeCategoryId;
 }

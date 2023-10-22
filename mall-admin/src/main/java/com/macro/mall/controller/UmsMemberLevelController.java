@@ -15,17 +15,17 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import java.util.List;
 
 /**
- * 会员等级管理Controller
+ * 會員等級管理Controller
  * Created by macro on 2018/4/26.
  */
 @Controller
-@Api(tags = "UmsMemberLevelController", description = "会员等级管理")
+@Api(tags = "UmsMemberLevelController", description = "會員等級管理")
 @RequestMapping("/memberLevel")
 public class UmsMemberLevelController {
     @Autowired
     private UmsMemberLevelService memberLevelService;
 
-    @ApiOperation("查询所有会员等级")
+    @ApiOperation("查詢所有會員等級")
     @RequestMapping(value = "/list", method = RequestMethod.GET)
     @ResponseBody
     public CommonResult<List<UmsMemberLevel>> list(@RequestParam("defaultStatus") Integer defaultStatus) {

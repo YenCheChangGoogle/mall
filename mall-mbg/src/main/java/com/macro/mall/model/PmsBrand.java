@@ -13,21 +13,21 @@ public class PmsBrand implements Serializable {
 
     private Integer sort;
 
-    @ApiModelProperty(value = "是否为品牌制造商：0->不是；1->是")
+    @ApiModelProperty(value = "是否為品牌製造商：0->不是；1->是")
     private Integer factoryStatus;
 
     private Integer showStatus;
 
-    @ApiModelProperty(value = "产品数量")
+    @ApiModelProperty(value = "產品數量")
     private Integer productCount;
 
-    @ApiModelProperty(value = "产品评论数量")
+    @ApiModelProperty(value = "產品評論數量")
     private Integer productCommentCount;
 
     @ApiModelProperty(value = "品牌logo")
     private String logo;
 
-    @ApiModelProperty(value = "专区大图")
+    @ApiModelProperty(value = "專區大圖")
     private String bigPic;
 
     @ApiModelProperty(value = "品牌故事")

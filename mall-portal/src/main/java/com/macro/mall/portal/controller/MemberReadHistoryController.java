@@ -14,17 +14,17 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 /**
- * 会员商品浏览记录管理Controller
+ * 會員商品瀏覽記錄管理Controller
  * Created by macro on 2018/8/3.
  */
 @Controller
-@Api(tags = "MemberReadHistoryController", description = "会员商品浏览记录管理")
+@Api(tags = "MemberReadHistoryController", description = "會員商品瀏覽記錄管理")
 @RequestMapping("/member/readHistory")
 public class MemberReadHistoryController {
     @Autowired
     private MemberReadHistoryService memberReadHistoryService;
 
-    @ApiOperation("创建浏览记录")
+    @ApiOperation("創建瀏覽記錄")
     @RequestMapping(value = "/create", method = RequestMethod.POST)
     @ResponseBody
     public CommonResult create(@RequestBody MemberReadHistory memberReadHistory) {
@@ -36,7 +36,7 @@ public class MemberReadHistoryController {
         }
     }
 
-    @ApiOperation("删除浏览记录")
+    @ApiOperation("刪除瀏覽記錄")
     @RequestMapping(value = "/delete", method = RequestMethod.POST)
     @ResponseBody
     public CommonResult delete(@RequestParam("ids") List<String> ids) {
@@ -48,7 +48,7 @@ public class MemberReadHistoryController {
         }
     }
 
-    @ApiOperation("清空浏览记录")
+    @ApiOperation("清空瀏覽記錄")
     @RequestMapping(value = "/clear", method = RequestMethod.POST)
     @ResponseBody
     public CommonResult clear() {
@@ -56,7 +56,7 @@ public class MemberReadHistoryController {
         return CommonResult.success(null);
     }
 
-    @ApiOperation("分页获取浏览记录")
+    @ApiOperation("分頁獲取瀏覽記錄")
     @RequestMapping(value = "/list", method = RequestMethod.GET)
     @ResponseBody
     public CommonResult<CommonPage<MemberReadHistory>> list(@RequestParam(value = "pageNum", defaultValue = "1") Integer pageNum,

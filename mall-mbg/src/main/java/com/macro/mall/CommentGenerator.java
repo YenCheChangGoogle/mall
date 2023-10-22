@@ -11,7 +11,7 @@ import org.mybatis.generator.internal.util.StringUtility;
 import java.util.Properties;
 
 /**
- * 自定义注释生成器
+ * 自定義註釋生成器
  * Created by macro on 2018/4/26.
  */
 public class CommentGenerator extends DefaultCommentGenerator {
@@ -21,7 +21,7 @@ public class CommentGenerator extends DefaultCommentGenerator {
     private static final String API_MODEL_PROPERTY_FULL_CLASS_NAME="io.swagger.annotations.ApiModelProperty";
 
     /**
-     * 设置用户配置的参数
+     * 設置用戶配置的參數
      */
     @Override
     public void addConfigurationProperties(Properties properties) {
@@ -30,31 +30,31 @@ public class CommentGenerator extends DefaultCommentGenerator {
     }
 
     /**
-     * 给字段添加注释
+     * 給字段添加註釋
      */
     @Override
     public void addFieldComment(Field field, IntrospectedTable introspectedTable,
                                 IntrospectedColumn introspectedColumn) {
         String remarks = introspectedColumn.getRemarks();
-        //根据参数和备注信息判断是否添加swagger注解信息
+        //根據參數和備註信息判斷是否添加swagger註解信息
         if(addRemarkComments&&StringUtility.stringHasValue(remarks)){
 //            addFieldJavaDoc(field, remarks);
-            //数据库中特殊字符需要转义
+            //數據庫中特殊字符需要轉義
             if(remarks.contains("\"")){
                 remarks = remarks.replace("\"","'");
             }
-            //给model的字段添加swagger注解
+            //給model的字段添加swagger註解
             field.addJavaDocLine("@ApiModelProperty(value = \""+remarks+"\")");
         }
     }
 
     /**
-     * 给model的字段添加注释
+     * 給model的字段添加註釋
      */
     private void addFieldJavaDoc(Field field, String remarks) {
-        //文档注释开始
+        //文檔註釋開始
         field.addJavaDocLine("/**");
-        //获取数据库字段的备注信息
+        //獲取數據庫字段的備註信息
         String[] remarkLines = remarks.split(System.getProperty("line.separator"));
         for(String remarkLine:remarkLines){
             field.addJavaDocLine(" * "+remarkLine);
@@ -66,7 +66,7 @@ public class CommentGenerator extends DefaultCommentGenerator {
     @Override
     public void addJavaFileComment(CompilationUnit compilationUnit) {
         super.addJavaFileComment(compilationUnit);
-        //只在model中添加swagger注解类的导入
+        //只在model中添加swagger註解類的導入
         if(!compilationUnit.getType().getFullyQualifiedName().contains(MAPPER_SUFFIX)&&!compilationUnit.getType().getFullyQualifiedName().contains(EXAMPLE_SUFFIX)){
             compilationUnit.addImportedType(new FullyQualifiedJavaType(API_MODEL_PROPERTY_FULL_CLASS_NAME));
         }

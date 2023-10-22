@@ -6,7 +6,7 @@ import org.springframework.context.annotation.Configuration;
 import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
 /**
- * Swagger API文档相关配置
+ * Swagger API文檔相關配置
  * Created by macro on 2018/4/26.
  */
 @Configuration
@@ -17,7 +17,7 @@ public class SwaggerConfig extends BaseSwaggerConfig {
     public SwaggerProperties swaggerProperties() {
         return SwaggerProperties.builder()
                 .apiBasePackage("com.macro.mall.demo.controller")
-                .title("mall-demo系统")
+                .title("mall-demo系統")
                 .description("SpringBoot版本中的一些示例")
                 .contactName("macro")
                 .version("1.0")

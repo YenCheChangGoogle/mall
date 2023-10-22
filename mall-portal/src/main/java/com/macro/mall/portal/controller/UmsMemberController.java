@@ -19,11 +19,11 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * 会员登录注册管理Controller
+ * 會員登錄註冊管理Controller
  * Created by macro on 2018/8/3.
  */
 @Controller
-@Api(tags = "UmsMemberController", description = "会员登录注册管理")
+@Api(tags = "UmsMemberController", description = "會員登錄註冊管理")
 @RequestMapping("/sso")
 public class UmsMemberController {
     @Value("${jwt.tokenHeader}")
@@ -33,7 +33,7 @@ public class UmsMemberController {
     @Autowired
     private UmsMemberService memberService;
 
-    @ApiOperation("会员注册")
+    @ApiOperation("會員註冊")
     @RequestMapping(value = "/register", method = RequestMethod.POST)
     @ResponseBody
     public CommonResult register(@RequestParam String username,
@@ -41,17 +41,17 @@ public class UmsMemberController {
                                  @RequestParam String telephone,
                                  @RequestParam String authCode) {
         memberService.register(username, password, telephone, authCode);
-        return CommonResult.success(null,"注册成功");
+        return CommonResult.success(null,"註冊成功");
     }
 
-    @ApiOperation("会员登录")
+    @ApiOperation("會員登錄")
     @RequestMapping(value = "/login", method = RequestMethod.POST)
     @ResponseBody
     public CommonResult login(@RequestParam String username,
                               @RequestParam String password) {
         String token = memberService.login(username, password);
         if (token == null) {
-            return CommonResult.validateFailed("用户名或密码错误");
+            return CommonResult.validateFailed("用戶名或密碼錯誤");
         }
         Map<String, String> tokenMap = new HashMap<>();
         tokenMap.put("token", token);
@@ -59,7 +59,7 @@ public class UmsMemberController {
         return CommonResult.success(tokenMap);
     }
 
-    @ApiOperation("获取会员信息")
+    @ApiOperation("獲取會員信息")
     @RequestMapping(value = "/info", method = RequestMethod.GET)
     @ResponseBody
     public CommonResult info(Principal principal) {
@@ -70,22 +70,22 @@ public class UmsMemberController {
         return CommonResult.success(member);
     }
 
-    @ApiOperation("获取验证码")
+    @ApiOperation("獲取驗證碼")
     @RequestMapping(value = "/getAuthCode", method = RequestMethod.GET)
     @ResponseBody
     public CommonResult getAuthCode(@RequestParam String telephone) {
         String authCode = memberService.generateAuthCode(telephone);
-        return CommonResult.success(authCode,"获取验证码成功");
+        return CommonResult.success(authCode,"獲取驗證碼成功");
     }
 
-    @ApiOperation("修改密码")
+    @ApiOperation("修改密碼")
     @RequestMapping(value = "/updatePassword", method = RequestMethod.POST)
     @ResponseBody
     public CommonResult updatePassword(@RequestParam String telephone,
                                  @RequestParam String password,
                                  @RequestParam String authCode) {
         memberService.updatePassword(telephone,password,authCode);
-        return CommonResult.success(null,"密码修改成功");
+        return CommonResult.success(null,"密碼修改成功");
     }
 
 
@@ -96,7 +96,7 @@ public class UmsMemberController {
         String token = request.getHeader(tokenHeader);
         String refreshToken = memberService.refreshToken(token);
         if (refreshToken == null) {
-            return CommonResult.failed("token已经过期！");
+            return CommonResult.failed("token已經過期！");
         }
         Map<String, String> tokenMap = new HashMap<>();
         tokenMap.put("token", refreshToken);

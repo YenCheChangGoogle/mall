@@ -4,13 +4,13 @@ import java.util.Calendar;
 import java.util.Date;
 
 /**
- * 日期工具类
+ * 日期工具類
  * Created by macro on 2019/1/29.
  */
 public class DateUtil {
 
     /**
-     * 从Date类型的时间中提取日期部分
+     * 從Date類型的時間中提取日期部分
      */
     public static Date getDate(Date date) {
         Calendar calendar = Calendar.getInstance();
@@ -22,7 +22,7 @@ public class DateUtil {
     }
 
     /**
-     * 从Date类型的时间中提取时间部分
+     * 從Date類型的時間中提取時間部分
      */
     public static Date getTime(Date date) {
         Calendar calendar = Calendar.getInstance();

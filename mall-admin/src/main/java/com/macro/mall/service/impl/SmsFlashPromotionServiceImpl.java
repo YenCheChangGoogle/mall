@@ -13,7 +13,7 @@ import java.util.Date;
 import java.util.List;
 
 /**
- * 限时购活动管理Service实现类
+ * 限時購活動管理Service實現類
  * Created by macro on 2018/11/16.
  */
 @Service

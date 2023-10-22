@@ -8,58 +8,58 @@ import java.util.Date;
 public class OmsOrderReturnApply implements Serializable {
     private Long id;
 
-    @ApiModelProperty(value = "订单id")
+    @ApiModelProperty(value = "訂單id")
     private Long orderId;
 
-    @ApiModelProperty(value = "收货地址表id")
+    @ApiModelProperty(value = "收貨地址表id")
     private Long companyAddressId;
 
-    @ApiModelProperty(value = "退货商品id")
+    @ApiModelProperty(value = "退貨商品id")
     private Long productId;
 
-    @ApiModelProperty(value = "订单编号")
+    @ApiModelProperty(value = "訂單編號")
     private String orderSn;
 
-    @ApiModelProperty(value = "申请时间")
+    @ApiModelProperty(value = "申請時間")
     private Date createTime;
 
-    @ApiModelProperty(value = "会员用户名")
+    @ApiModelProperty(value = "會員用戶名")
     private String memberUsername;
 
-    @ApiModelProperty(value = "退款金额")
+    @ApiModelProperty(value = "退款金額")
     private BigDecimal returnAmount;
 
-    @ApiModelProperty(value = "退货人姓名")
+    @ApiModelProperty(value = "退貨人姓名")
     private String returnName;
 
-    @ApiModelProperty(value = "退货人电话")
+    @ApiModelProperty(value = "退貨人電話")
     private String returnPhone;
 
-    @ApiModelProperty(value = "申请状态：0->待处理；1->退货中；2->已完成；3->已拒绝")
+    @ApiModelProperty(value = "申請狀態：0->待處理；1->退貨中；2->已完成；3->已拒絕")
     private Integer status;
 
-    @ApiModelProperty(value = "处理时间")
+    @ApiModelProperty(value = "處理時間")
     private Date handleTime;
 
-    @ApiModelProperty(value = "商品图片")
+    @ApiModelProperty(value = "商品圖片")
     private String productPic;
 
-    @ApiModelProperty(value = "商品名称")
+    @ApiModelProperty(value = "商品名稱")
     private String productName;
 
     @ApiModelProperty(value = "商品品牌")
     private String productBrand;
 
-    @ApiModelProperty(value = "商品销售属性：颜色：红色；尺码：xl;")
+    @ApiModelProperty(value = "商品銷售屬性：顏色：紅色；尺碼：xl;")
     private String productAttr;
 
-    @ApiModelProperty(value = "退货数量")
+    @ApiModelProperty(value = "退貨數量")
     private Integer productCount;
 
-    @ApiModelProperty(value = "商品单价")
+    @ApiModelProperty(value = "商品單價")
     private BigDecimal productPrice;
 
-    @ApiModelProperty(value = "商品实际支付单价")
+    @ApiModelProperty(value = "商品實際支付單價")
     private BigDecimal productRealPrice;
 
     @ApiModelProperty(value = "原因")
@@ -68,22 +68,22 @@ public class OmsOrderReturnApply implements Serializable {
     @ApiModelProperty(value = "描述")
     private String description;
 
-    @ApiModelProperty(value = "凭证图片，以逗号隔开")
+    @ApiModelProperty(value = "憑證圖片，以逗號隔開")
     private String proofPics;
 
-    @ApiModelProperty(value = "处理备注")
+    @ApiModelProperty(value = "處理備註")
     private String handleNote;
 
-    @ApiModelProperty(value = "处理人员")
+    @ApiModelProperty(value = "處理人員")
     private String handleMan;
 
-    @ApiModelProperty(value = "收货人")
+    @ApiModelProperty(value = "收貨人")
     private String receiveMan;
 
-    @ApiModelProperty(value = "收货时间")
+    @ApiModelProperty(value = "收貨時間")
     private Date receiveTime;
 
-    @ApiModelProperty(value = "收货备注")
+    @ApiModelProperty(value = "收貨備註")
     private String receiveNote;
 
     private static final long serialVersionUID = 1L;

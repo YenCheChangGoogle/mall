@@ -8,27 +8,27 @@ import org.springframework.data.mongodb.repository.MongoRepository;
 import java.util.List;
 
 /**
- * 会员商品收藏Repository
+ * 會員商品收藏Repository
  * Created by macro on 2018/8/2.
  */
 public interface MemberProductCollectionRepository extends MongoRepository<MemberProductCollection, String> {
     /**
-     * 根据会员ID和商品ID查找记录
+     * 根據會員ID和商品ID查找記錄
      */
     MemberProductCollection findByMemberIdAndProductId(Long memberId, Long productId);
 
     /**
-     * 根据会员ID和商品ID删除记录
+     * 根據會員ID和商品ID刪除記錄
      */
     int deleteByMemberIdAndProductId(Long memberId, Long productId);
 
     /**
-     * 根据会员ID分页查询记录
+     * 根據會員ID分頁查詢記錄
      */
     Page<MemberProductCollection> findByMemberId(Long memberId, Pageable pageable);
 
     /**
-     * 根据会员ID删除录
+     * 根據會員ID刪除錄
      */
     void deleteAllByMemberId(Long memberId);
 }

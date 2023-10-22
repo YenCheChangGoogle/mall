@@ -1,0 +1,32 @@
+直接運行com.macro.mall.MallAdminApplication的main方法即可
+http://localhost:8080/swagger-ui.html
+http://localhost:8080/swagger-ui/
+
+訪問 mall-admin-web 前端項目驗證部署，默認使用者密碼：admin / macro123
+
+mall-portal 和 mall-search 暫時沒有前端，可以訪問後端 swagger 驗證部署 http://localhost:8080/swagger-ui/
+
+/Users/yenchechang/.npm/_logs
+
+編譯 後台系統前端畫面(Vue系統) mall-admin-web 
+解壓縮 mall-admin-web.zip 後在目錄內 執行 安裝相關函式 npm install
+後再編譯Vue專案  npm run build
+重編譯VUE後 會產生相關檔案在目錄 C:\GIT\github\mall-admin-web\dist
+要複製 C:\GIT\github\mall-admin-web\dist\dist目錄下的檔案 到目錄 C:\Docker\nginx\html 目錄下
+
+ElasticSearch 應用包含了 Kinbana，如不需要可刪除 Kinbana 元件
+ElasticSearch 默認開啟了密碼驗證，在 元件 -> 環境組態 -> 組態檔案設定 編輯組態檔案將 xpack.security.enabled 設定為 false 並更新元件生效
+
+mall-admin
+    啟動項目：直接運行com.macro.mall.MallAdminApplication的main方法即可；
+    介面文件地址：http://localhost:8080/swagger-ui/
+
+mall-search
+    啟動項目：直接運行com.macro.mall.search.MallSearchApplication的main方法即可；
+    介面文件地址：http://localhost:8081/swagger-ui/
+    使用前需要先呼叫介面匯入資料；http://localhost:8081/esProduct/importAll
+    如出現無法啟動的問題，可以先刪除Elasticsearch裡面的資料再啟動
+
+mall-portal
+    啟動mall-portal項目：直接運行com.macro.mall.portal.MallPortalApplication的main方法即可；
+    介面文件地址：http://localhost:8085/swagger-ui/

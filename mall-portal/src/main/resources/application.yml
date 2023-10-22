@@ -2,7 +2,7 @@ spring:
   application:
     name: mall-portal
   profiles:
-    active: dev #默认为开发环境
+    active: dev #默認為開發環境
 
 mybatis:
   mapper-locations:
@@ -10,14 +10,14 @@ mybatis:
     - classpath*:com/**/mapper/*.xml
 
 jwt:
-  tokenHeader: Authorization #JWT存储的请求头
-  secret: mall-portal-secret #JWT加解密使用的密钥
-  expiration: 604800 #JWT的超期限时间(60*60*24*7)
-  tokenHead: 'Bearer '  #JWT负载中拿到开头
+  tokenHeader: Authorization #JWT存儲的請求頭
+  secret: mall-portal-secret #JWT加解密使用的密鑰
+  expiration: 604800 #JWT的超期限時間(60*60*24*7)
+  tokenHead: 'Bearer '  #JWT負載中拿到開頭
 
 secure:
   ignored:
-    urls: #安全路径白名单
+    urls: #安全路徑白名單
       - /swagger-ui.html
       - /swagger-resources/**
       - /swagger/**
@@ -34,7 +34,7 @@ secure:
       - /product/**
       - /brand/**
 
-# 自定义redis key
+# 自定義redis key
 redis:
   database: mall
   key:
@@ -42,10 +42,10 @@ redis:
     orderId: 'oms:orderId'
     member: 'ums:member'
   expire:
-    authCode: 90 # 验证码超期时间
-    common: 86400 # 24小时
+    authCode: 90 # 驗證碼超期時間
+    common: 86400 # 24小時
 
-# 消息队列定义
+# 消息隊列定義
 rabbitmq:
   queue:
     name:

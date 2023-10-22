@@ -9,16 +9,16 @@ public class SmsFlashPromotion implements Serializable {
 
     private String title;
 
-    @ApiModelProperty(value = "开始日期")
+    @ApiModelProperty(value = "開始日期")
     private Date startDate;
 
-    @ApiModelProperty(value = "结束日期")
+    @ApiModelProperty(value = "結束日期")
     private Date endDate;
 
-    @ApiModelProperty(value = "上下线状态")
+    @ApiModelProperty(value = "上下線狀態")
     private Integer status;
 
-    @ApiModelProperty(value = "秒杀时间段名称")
+    @ApiModelProperty(value = "秒殺時間段名稱")
     private Date createTime;
 
     private static final long serialVersionUID = 1L;
